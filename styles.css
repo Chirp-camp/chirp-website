@@ -778,6 +778,9 @@ p {
 .contact-card .icon {
   font-size: 2rem;
   margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact-card h3 {
@@ -786,7 +789,7 @@ p {
 }
 
 .contact-card a {
-  color: var(--warm-orange);
+  color: #C4702E;
   font-weight: 700;
   font-size: 1.05rem;
   transition: color var(--transition);
