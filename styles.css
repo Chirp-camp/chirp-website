@@ -395,12 +395,18 @@ p {
 }
 
 .problem-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 24px;
   max-width: 900px;
   margin: 0 auto;
+  justify-content: center;
 }
+
+.problem-grid .problem-card {
+  flex: 0 1 calc(50% - 12px);
+}
+
 
 .problem-card {
   background: var(--white);
@@ -526,7 +532,17 @@ p {
 
 .capability-card .icon {
   font-size: 2.2rem;
-  margin-bottom: 12px;
+  margin: 0 auto 16px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.capability-card .icon svg {
+  width: 56px;
+  height: 56px;
 }
 
 .capability-card h3 {

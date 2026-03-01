@@ -62,6 +62,9 @@
         <div class="problem-card problem-card-compact">
           <p>Communication is fragmented across multiple services</p>
         </div>
+        <div class="problem-card problem-card-compact" style="flex: 0 1 calc(50% - 12px); margin: 0 auto;">
+          <p>Emergency documentation depends on staff manually recording incidents in real time</p>
+        </div>
       </div>
     </div>
   </section>
@@ -72,38 +75,83 @@
     <div class="capabilities-content container">
       <h2>Product Capabilities</h2>
       <div class="capabilities-grid">
+        <!-- Weather Alerts: cloud with lightning bolt -->
         <div class="capability-card">
-          <div class="icon">&#x1F326;&#xFE0F;</div>
-          <h3>Location-Specific Weather Alerts</h3>
-          <p>Receive real-time severe weather alerts tailored to your camp's exact GPS coordinates.</p>
+          <div class="icon">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 30a8 8 0 01-.5-16A11 11 0 0137 16a7 7 0 01-1 14H16z" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M26 32l-4 8h8l-4 8" stroke="#F4A261" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Hyper-Local Critical Weather Alerting</h3>
+          <p>Receive real-time, severe weather alerts tailored to your camp's exact GPS coordinates.</p>
         </div>
+        <!-- Instant Campwide Broadcasting: megaphone with sound waves -->
         <div class="capability-card">
-          <div class="icon">&#x1F4E2;</div>
-          <h3>Campwide &amp; Parent Messaging</h3>
-          <p>Send announcements to all staff, specific groups, or directly to parents — all from one platform.</p>
+          <div class="icon">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22v12h6l12 8V14l-12 8h-6z" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M36 22c2 2 3 4 3 6s-1 4-3 6" stroke="#F4A261" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M40 18c3 3 5 7 5 10s-2 7-5 10" stroke="#F4A261" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Instant Campwide Broadcasting</h3>
+          <p>Reach staff, groups, or parents instantly — with one-tap emergency alerts that override all devices when it matters most.</p>
         </div>
+
+        <!-- Live Camp Map: folded map with location pin -->
         <div class="capability-card">
-          <div class="icon">&#x2705;</div>
-          <h3>Message Acknowledgment</h3>
-          <p>Ensure critical messages are received and confirmed with read-receipt acknowledgment tracking.</p>
-        </div>
-        <div class="capability-card">
-          <div class="icon">&#x1F6A8;</div>
-          <h3>Easy-Access Emergency Broadcasts</h3>
-          <p>One-tap emergency alerts that instantly reach every device on campus with override priority.</p>
-        </div>
-        <div class="capability-card">
-          <div class="icon">&#x1F465;</div>
-          <h3>Staff Directory</h3>
-          <p>Searchable, always-updated directory with roles, contact info, and online availability status.</p>
-        </div>
-        <div class="capability-card">
-          <div class="icon">&#x1F5FA;&#xFE0F;</div>
+          <div class="icon">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 14l12-4 12 4 12-4v32l-12 4-12-4-12 4V14z" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M22 10v32M34 14v32" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="28" cy="24" r="4" fill="#F4A261"/>
+              <path d="M28 28l-5-5a7 7 0 1110 0l-5 5z" fill="#F4A261" fill-opacity="0.3"/>
+            </svg>
+          </div>
           <h3>Live Camp Map</h3>
           <p>Interactive map showing the location of staff, facility markers, and emergency assembly points.</p>
         </div>
-        <div class="capability-card centered">
-          <div class="icon">&#x1F4CB;</div>
+        <!-- Protocol-Driven Alerts: gear with list/steps -->
+        <div class="capability-card">
+          <div class="icon">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="22" cy="28" r="8" stroke="white" stroke-width="2.5"/>
+              <path d="M22 20v-4M22 36v4M14 28h-4M30 28h4" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M16.3 22.3l-2.8-2.8M27.7 33.7l2.8 2.8M16.3 33.7l-2.8 2.8M27.7 22.3l2.8-2.8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="22" cy="28" r="3" fill="#F4A261"/>
+              <path d="M36 18h10M36 24h10M36 30h8" stroke="#F4A261" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="34" cy="18" r="1.5" fill="white"/>
+              <circle cx="34" cy="24" r="1.5" fill="white"/>
+              <circle cx="34" cy="30" r="1.5" fill="white"/>
+            </svg>
+          </div>
+          <h3>Protocol-Driven Alerts</h3>
+          <p>Build custom alerts with attached response plans so every staff member receives not just the warning, but the exact steps to follow.</p>
+        </div>
+        <!-- Easy Protocol & Camper Data Upload: cloud with upload arrow -->
+        <div class="capability-card">
+          <div class="icon">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 36h24a8 8 0 00.5-16A13 13 0 0015.5 16 10 10 0 0015 36z" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M28 24v16" stroke="#F4A261" stroke-width="3" stroke-linecap="round"/>
+              <path d="M22 30l6-6 6 6" stroke="#F4A261" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Easy Protocol & Camper Data Upload</h3>
+          <p>Drop in your existing emergency protocols and camper profiles — Chirp works with what you already have.</p>
+        </div>
+        <!-- Audit Logs: clipboard with checkmark -->
+        <div class="capability-card">
+          <div class="icon">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="14" y="12" width="28" height="36" rx="3" stroke="white" stroke-width="2.5"/>
+              <path d="M22 8h12v8H22V8z" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M22 24h12M22 30h12M22 36h8" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="40" cy="38" r="8" fill="#F4A261"/>
+              <path d="M36 38l3 3 5-5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <h3>Automated Emergency Audit Logs</h3>
           <p>Comprehensive digital records of every alert sent, received, and acknowledged for compliance.</p>
         </div>
@@ -116,7 +164,7 @@
     <div class="container">
       <h2>We're Building a Better Way</h2>
       <div class="building-text">
-        <p>Chirp is a mobile app designed specifically to leverage smartphone hardware for camp staff communication and weather safety — bringing automated alerts, instant messaging, and accountability together in one platform thats built for how camps actually operate.</p>
+        <p>Chirp is a mobile app designed specifically to leverage smartphone hardware for camp staff communication and weather safety — bringing automated alerts with attached response protocols, instant messaging, and accountability together in one platform that's built for how camps actually operate.</p>
       </div>
     </div>
   </section>
