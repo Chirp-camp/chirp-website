@@ -1363,6 +1363,11 @@ a.contact-card {
     --nav-height: 64px;
   }
 
+  .nav-logo img {
+    width: 140px;
+    height: 62px;
+  }
+
   .capabilities-grid {
     grid-template-columns: 1fr;
   }
