@@ -1372,8 +1372,8 @@ a.contact-card {
     max-width: none;
   }
 
-  .problem-grid {
-    grid-template-columns: 1fr;
+  .problem-grid .problem-card {
+    flex: 0 1 calc(50% - 12px);
   }
 
   .features-grid {
