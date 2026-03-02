@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="DigitalAssets/ChirpAppCon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -37,14 +37,14 @@
 
   <!-- Hero Section -->
   <section class="hero hero-home">
-    <div class="hero-bg" style="background-image: url('OGBACK.png')"></div>
+    <div class="hero-bg"></div>
     <div class="hero-content">
       <h1>The Critical Weather & Communication Platform for Camps</h1>
       <p>Streamline communication and ensure safety at your camp.</p>
     </div>
   </section>
 
-  <!-- Problem Section -->
+  <!-- Problem + Solution -->
   <section class="problem-section section-padding">
     <div class="container">
       <h2>The Challenges Camp Directors Face Today</h2>
@@ -66,14 +66,8 @@
           <p>Emergency documentation depends on staff manually recording incidents in real time</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- We're Building a Better Way -->
-  <section class="building-section section-padding">
-    <div class="container">
-      <h2>We're Building a Better Way</h2>
-      <div class="building-text">
+      <div class="building-text" style="margin-top: 48px;">
+        <h2 style="color: var(--accent-cyan); text-align: center; margin-bottom: 24px; text-shadow: 0 0 20px var(--glow-cyan);">We're Building a Better Way</h2>
         <p>Chirp is a mobile app designed specifically to leverage smartphone hardware for camp staff communication and weather safety — bringing automated alerts with attached response protocols, instant messaging, and accountability together in one platform that's built for how camps actually operate.</p>
       </div>
     </div>
@@ -81,7 +75,7 @@
 
   <!-- Product Capabilities Section -->
   <section class="capabilities-section" id="capabilities">
-    <div class="capabilities-bg" style="background-image: url('WoodsBACK.png')"></div>
+    <div class="capabilities-bg" style="background-image: url('DigitalAssets/WoodsBACK.png')"></div>
     <div class="capabilities-content container">
       <h2>Product Capabilities</h2>
       <div class="capabilities-grid">
@@ -166,10 +160,21 @@
           <p>Comprehensive digital records of every alert sent, received, and acknowledged for compliance.</p>
         </div>
       </div>
+      <div style="margin-top: 56px; text-align: center;">
+        <h2 style="color: var(--accent-cyan); margin-bottom: 40px; text-shadow: 0 0 20px var(--glow-cyan);">Who We Serve</h2>
+        <div class="serve-pills">
+          <span class="serve-pill">Summer Camps</span>
+          <span class="serve-pill">Day Camps</span>
+          <span class="serve-pill">Scout Camps</span>
+          <span class="serve-pill">Residential Programs</span>
+          <span class="serve-pill">Outdoor Education</span>
+          <span class="serve-pill">Retreat Centers</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Value Prop: Parents Hear It From You First -->
+  <!-- Value Propositions -->
   <section class="value-prop-section">
     <div class="container">
       <h2>Parents Hear It From You First</h2>
@@ -184,32 +189,34 @@
           <li>Message confirmation tracking that parents were informed</li>
         </ul>
       </div>
-    </div>
-  </section>
-
-  <!-- Value Prop: Every Camper, Accounted For -->
-  <section class="value-prop-section value-prop-alt">
-    <div class="container">
-      <h2>Every Camper, Accounted For</h2>
-      <p class="value-prop-intro">During emergencies, the location of every staff member is critical. Paper-based head counts fail under pressure. In large camps where staff is spread across multiple activities, accounting for everyone is difficult at best.</p>
-      <div class="highlight-box">
-        <p style="font-weight: 700; color: var(--dark-text); margin-bottom: 12px;">When you trigger a missing camper alert, Chirp doesn't just notify your team — it includes the camper's photo and relevant details so everyone knows exactly who they're looking for.</p>
-        <ul class="value-bullets">
-          <li>Complete camper profiles with photos, important medical information, and emergency contact info</li>
-          <li>Groups inside of Chirp are called Flocks and Flock assignments link campers to their counselors and cabins</li>
-          <li>Digital muster check-ins at designated safety zones</li>
-          <li>Real-time alert response acknowledgement during emergencies</li>
-        </ul>
+      <div style="margin-top: 56px;">
+        <h2 style="color: var(--accent-cyan); text-align: center; margin-bottom: 16px; text-shadow: 0 0 20px var(--glow-cyan);">Every Camper, Accounted For</h2>
+        <p class="value-prop-intro">During emergencies, the location of every staff member is critical. Paper-based head counts fail under pressure. In large camps where staff is spread across multiple activities, accounting for everyone is difficult at best.</p>
+        <div class="highlight-box">
+          <p style="font-weight: 700; color: var(--dark-text); margin-bottom: 12px;">When you trigger a missing camper alert, Chirp doesn't just notify your team — it includes the camper's photo and relevant details so everyone knows exactly who they're looking for.</p>
+          <ul class="value-bullets">
+            <li>Complete camper profiles with photos, important medical information, and emergency contact info</li>
+            <li>Groups inside of Chirp are called Flocks and Flock assignments link campers to their counselors and cabins</li>
+            <li>Digital muster check-ins at designated safety zones</li>
+            <li>Real-time alert response acknowledgement during emergencies</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <script>
-    // Navbar scroll effect
+    // Navbar scroll effect + parallax background
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
+    function onScroll() {
       navbar.classList.toggle('scrolled', window.scrollY > 50);
-    });
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const panDistance = (window.innerHeight * 3.5) - window.innerHeight;
+      const speed = maxScroll > 0 ? panDistance / maxScroll : 0;
+      document.body.style.setProperty('--parallax-y', (-window.scrollY * speed) + 'px');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
 
     // Hamburger menu
     const hamburger = document.getElementById('hamburger');
@@ -218,6 +225,12 @@
       hamburger.classList.toggle('open');
       mobileMenu.classList.toggle('open');
     });
+
+    // Scroll-reveal glass panels
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section:not(.hero) > .container, section:not(.hero) > .capabilities-content').forEach(el => observer.observe(el));
   </script>
 
 </body>

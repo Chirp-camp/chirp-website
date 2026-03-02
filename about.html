@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="DigitalAssets/ChirpAppCon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -37,13 +37,13 @@
 
   <!-- Hero -->
   <section class="hero hero-short">
-    <div class="hero-bg" style="background-image: url('WoodsBACK.png')"></div>
+    <div class="hero-bg"></div>
     <div class="hero-content">
       <h1>About Chirp</h1>
     </div>
   </section>
 
-  <!-- Our Mission -->
+  <!-- Our Story + What Drives Us -->
   <section class="mission-section section-padding">
     <div class="container">
       <h2>Our Story</h2>
@@ -51,14 +51,8 @@
         <p>Chirp started with a phone call from a good friend and executive director of a Texas camp, who needed help navigating the new Heaven 27 regulations. What began as a simple weather detection and alert system quickly grew as conversations with camp directors revealed bigger needs around communication, documentation, and coordination.</p>
         <p>Today, Chirp is a full camp safety and critical communications platform — covering weather alerts, emergency broadcasts, staff messaging, and audit logs — all in one place, built to adapt to the way each camp actually operates.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- What Drives Us -->
-  <section class="building-section section-padding">
-    <div class="container">
-      <h2>What Drives Us</h2>
-      <div class="building-text">
+      <div class="building-text" style="margin-top: 48px;">
+        <h2 style="color: var(--accent-gold); text-align: center; margin-bottom: 24px; text-shadow: 0 0 20px var(--glow-gold);">What Drives Us</h2>
         <p>For too long, legacy companies have dominated the camp industry — providing outdated, underperforming software at modern-day prices. We built Chirp with direct input from camp directors to deliver what camps actually need, while ensuring that the value of our product well exceeds the cost.</p>
       </div>
     </div>
@@ -66,7 +60,7 @@
 
   <!-- Marketing Video -->
   <section class="building-section section-padding">
-    <div class="container" style="max-width: 900px;">
+    <div class="container" style="max-width: 1250px;">
       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px;">
         <iframe
           src="https://www.youtube.com/embed/x8fMEbgzpt8?autoplay=1&mute=1&loop=1&playlist=x8fMEbgzpt8&controls=1&rel=0"
@@ -115,15 +109,27 @@
 
   <script>
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
+    function onScroll() {
       navbar.classList.toggle('scrolled', window.scrollY > 50);
-    });
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const panDistance = (window.innerHeight * 3.5) - window.innerHeight;
+      const speed = maxScroll > 0 ? panDistance / maxScroll : 0;
+      document.body.style.setProperty('--parallax-y', (-window.scrollY * speed) + 'px');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('open');
       mobileMenu.classList.toggle('open');
     });
+
+    // Scroll-reveal glass panels
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section:not(.hero) > .container').forEach(el => observer.observe(el));
   </script>
 
 </body>
