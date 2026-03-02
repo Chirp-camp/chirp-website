@@ -1,5 +1,6 @@
 /* ========================================
-   Chirp — Shared Styles
+   Chirp — "Golden Hour Connectivity" Theme
+   Deep forest + warm sunset + cyan data trails
    ======================================== */
 
 /* --- Reset & Base --- */
@@ -15,10 +16,25 @@ html {
 
 body {
   font-family: 'Nunito', sans-serif;
-  color: var(--dark-text);
-  background-color: var(--off-white);
+  color: #FFFBF5;
+  background-color: #1C3721;
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+/* Parallax background — scrolls at ~35% of content speed */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 350vh;
+  z-index: -1;
+  background: url('DigitalAssets/scroll-bg.png') center top / 100% 100% no-repeat;
+  transform: translateY(var(--parallax-y, 0px));
+  will-change: transform;
+  pointer-events: none;
 }
 
 img {
@@ -43,27 +59,58 @@ button, input, textarea {
 
 /* --- CSS Custom Properties --- */
 :root {
-  --warm-orange: #E8873D;
-  --light-orange: #F4A261;
-  --sunset-pink: #E07A5F;
-  --wood-brown: #8B5E3C;
-  --dark-green: #2D5A27;
+  /* Legacy aliases — auto-update all existing var() references */
+  --warm-orange: #FF8C42;
+  --light-orange: #FFB347;
+  --sunset-pink: #C4956A;
+  --wood-brown: #D4A54A;
+  --dark-green: #E8DCC8;
   --light-blue: #7EC8E3;
-  --dark-text: #2C2C2C;
-  --off-white: #FFF8F0;
-  --white: #FFFFFF;
+  --dark-text: #FFFBF5;
+  --off-white: #1C3721;
+  --white: #234028;
+
+  /* Dark palette */
+  --bg-deep: #162D1A;
+  --bg-primary: #1C3721;
+  --bg-secondary: #234028;
+  --bg-card: rgba(42, 72, 48, 0.85);
+  --bg-card-solid: #2A4830;
+  --bg-glass: rgba(32, 56, 36, 0.55);
+
+  /* Text */
+  --text-primary: #FFFBF5;
+  --text-secondary: #D4C4A8;
+  --text-muted: #9B8E78;
+
+  /* Accents */
+  --campfire-orange: #FF8C42;
+  --accent-cyan: #E8DCC8;
+  --accent-gold: #D4A54A;
+  --evening-pink: #C4956A;
+  --forest-green: #4CAF50;
+
+  /* Borders & Glow */
+  --border-amber: rgba(255, 193, 7, 0.18);
+  --border-amber-strong: rgba(255, 193, 7, 0.35);
+  --border-cyan: rgba(232, 220, 200, 0.2);
+  --glow-orange: rgba(255, 140, 66, 0.35);
+  --glow-cyan: rgba(232, 220, 200, 0.15);
+  --glow-gold: rgba(212, 165, 74, 0.15);
 
   --nav-height: 100px;
   --max-width: 1200px;
   --section-padding: 80px 24px;
-  --border-radius: 12px;
+  --border-radius: 14px;
   --transition: 0.3s ease;
 }
 
 /* --- Typography --- */
 h1, h2, h3, h4 {
+  font-family: 'Quicksand', 'Nunito', sans-serif;
   line-height: 1.2;
-  font-weight: 800;
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
 h1 {
@@ -83,6 +130,7 @@ h3 {
 p {
   font-size: 1.05rem;
   line-height: 1.7;
+  color: var(--text-secondary);
 }
 
 /* --- Utility --- */
@@ -102,7 +150,7 @@ p {
 }
 
 /* ========================================
-   Navigation
+   Navigation — frosted glass
    ======================================== */
 .navbar {
   position: fixed;
@@ -110,29 +158,30 @@ p {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(255, 248, 240, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(58, 50, 42, 0.65);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border-bottom: 1px solid var(--border-amber);
   transition: background var(--transition), box-shadow var(--transition);
 }
 
 .navbar.scrolled {
-  background: rgba(255, 248, 240, 0.97);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  background: rgba(58, 50, 42, 0.8);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), 0 1px 0 var(--border-amber);
 }
 
 .nav-inner {
   width: 100%;
   padding: 0 40px;
-  height: var(--nav-height);
+  height: calc(var(--nav-height) * 1.12);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .nav-logo img {
-  width: 180px;
-  height: 80px;
+  width: 207px;
+  height: 92px;
   object-fit: cover;
   object-position: center;
 }
@@ -146,14 +195,15 @@ p {
 .nav-links a {
   font-weight: 700;
   font-size: 0.95rem;
-  color: var(--dark-text);
+  color: var(--text-secondary);
   position: relative;
-  transition: color var(--transition);
+  transition: color var(--transition), text-shadow var(--transition);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--warm-orange);
+  color: var(--accent-cyan);
+  text-shadow: 0 0 12px var(--glow-cyan);
 }
 
 .nav-links a::after {
@@ -163,7 +213,8 @@ p {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--warm-orange);
+  background: var(--accent-cyan);
+  box-shadow: 0 0 8px var(--glow-cyan);
   transition: width var(--transition);
 }
 
@@ -187,7 +238,7 @@ p {
   display: block;
   width: 26px;
   height: 3px;
-  background: var(--dark-text);
+  background: var(--text-primary);
   border-radius: 2px;
   transition: transform var(--transition), opacity var(--transition);
 }
@@ -211,12 +262,15 @@ p {
   top: var(--nav-height);
   left: 0;
   width: 100%;
-  background: var(--off-white);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background: rgba(58, 50, 42, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   padding: 24px;
   flex-direction: column;
   gap: 20px;
   z-index: 999;
+  border-bottom: 1px solid var(--border-amber);
 }
 
 .mobile-menu.open {
@@ -226,14 +280,15 @@ p {
 .mobile-menu a {
   font-weight: 700;
   font-size: 1.1rem;
-  color: var(--dark-text);
+  color: var(--text-secondary);
   padding: 8px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(255, 193, 7, 0.08);
+  transition: color var(--transition);
 }
 
 .mobile-menu a:hover,
 .mobile-menu a.active {
-  color: var(--warm-orange);
+  color: var(--accent-cyan);
 }
 
 /* ========================================
@@ -259,7 +314,6 @@ p {
   z-index: 0;
 }
 
-/* Home hero — full camp scene with logo at top, text at center */
 .hero-home {
   height: 100vh;
   min-height: 100vh;
@@ -274,12 +328,7 @@ p {
 }
 
 .hero-home .hero-bg::after {
-  background: linear-gradient(
-    180deg,
-    rgba(44, 44, 44, 0.1) 0%,
-    rgba(44, 44, 44, 0.25) 40%,
-    rgba(44, 44, 44, 0.5) 100%
-  );
+  background: none;
 }
 
 .hero-logo {
@@ -296,11 +345,7 @@ p {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(44, 44, 44, 0.55) 0%,
-    rgba(44, 44, 44, 0.4) 100%
-  );
+  background: none;
 }
 
 .hero-content {
@@ -310,30 +355,29 @@ p {
 }
 
 .hero h1 {
-  color: var(--white);
+  color: #FFFBF5;
   margin-bottom: 16px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 140, 66, 0.15);
 }
 
 .hero p {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 251, 245, 0.9);
   font-size: clamp(1.05rem, 2.5vw, 1.3rem);
   margin-bottom: 32px;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 }
 
 .hero-content .btn {
   margin: 6px 8px;
 }
 
-/* Short hero for inner pages */
 .hero-short {
-  min-height: 35vh;
-  padding: 120px 24px 40px;
+  min-height: 40vh;
+  padding: 180px 24px 50px;
 }
 
 /* ========================================
-   Buttons
+   Buttons — gradient fills with glow
    ======================================== */
 .btn {
   display: inline-block;
@@ -348,50 +392,54 @@ p {
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .btn-primary {
-  background: var(--warm-orange);
-  color: var(--white);
+  background: linear-gradient(135deg, #FF8C42 0%, #F2709C 100%);
+  color: #FFFBF5;
+  box-shadow: 0 4px 15px rgba(255, 140, 66, 0.25);
 }
 
 .btn-primary:hover {
-  background: #d57a32;
+  box-shadow: 0 8px 30px rgba(255, 140, 66, 0.45), 0 0 20px rgba(255, 140, 66, 0.2);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--white);
-  border: 2px solid var(--white);
+  color: var(--accent-cyan);
+  border: 2px solid var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(95, 251, 241, 0.1);
 }
 
 .btn-outline:hover {
-  background: var(--white);
-  color: var(--dark-text);
+  background: rgba(95, 251, 241, 0.08);
+  box-shadow: 0 8px 30px rgba(95, 251, 241, 0.25), 0 0 15px rgba(95, 251, 241, 0.15);
+  color: #FFFBF5;
 }
 
 .btn-green {
-  background: var(--dark-green);
-  color: var(--white);
+  background: linear-gradient(135deg, #4CAF50, #2D5A27);
+  color: #FFFBF5;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
 }
 
 .btn-green:hover {
-  background: #1e4a1a;
+  box-shadow: 0 8px 30px rgba(76, 175, 80, 0.35), 0 0 15px rgba(76, 175, 80, 0.15);
 }
 
 /* ========================================
    Section — Problem
    ======================================== */
 .problem-section {
-  background: var(--off-white);
+  background: transparent;
   padding: var(--section-padding);
 }
 
 .problem-section h2 {
-  color: var(--wood-brown);
+  color: var(--accent-gold);
   text-align: center;
   margin-bottom: 40px;
+  text-shadow: 0 0 20px var(--glow-gold);
 }
 
 .problem-grid {
@@ -407,30 +455,36 @@ p {
   flex: 0 1 calc(50% - 12px);
 }
 
-
 .problem-card {
-  background: var(--white);
+  background: var(--bg-card);
   padding: 28px;
   border-radius: var(--border-radius);
-  border-left: 4px solid var(--sunset-pink);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border-amber);
+  border-left: 4px solid var(--evening-pink);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.problem-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 126, 179, 0.08);
 }
 
 .problem-intro {
   text-align: center;
   max-width: 700px;
   margin: 0 auto 32px;
-  color: #555;
+  color: var(--text-secondary);
 }
 
 .problem-card h3 {
-  color: var(--sunset-pink);
+  color: var(--evening-pink);
   margin-bottom: 8px;
 }
 
 .problem-card p {
   font-size: 0.95rem;
-  color: #555;
+  color: var(--text-secondary);
 }
 
 .problem-card-compact {
@@ -441,7 +495,7 @@ p {
 
 .problem-card-compact p {
   font-weight: 700;
-  color: var(--dark-text);
+  color: var(--text-primary);
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -450,14 +504,15 @@ p {
    Section — We're Building a Better Way
    ======================================== */
 .building-section {
-  background: var(--white);
+  background: transparent;
   padding: var(--section-padding);
   text-align: center;
 }
 
 .building-section h2 {
-  color: var(--dark-green);
+  color: var(--accent-cyan);
   margin-bottom: 24px;
+  text-shadow: 0 0 20px var(--glow-cyan);
 }
 
 .building-text {
@@ -467,32 +522,22 @@ p {
 
 .building-text p {
   font-size: 1.1rem;
-  color: #444;
+  color: var(--text-secondary);
   line-height: 1.8;
 }
 
 /* ========================================
-   Section — Product Capabilities
+   Section — Product Capabilities (glass)
    ======================================== */
 .capabilities-section {
   position: relative;
+  background: transparent;
   padding: var(--section-padding);
   overflow: hidden;
 }
 
 .capabilities-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-}
-
-.capabilities-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(44, 44, 44, 0.65);
+  display: none;
 }
 
 .capabilities-content {
@@ -501,9 +546,10 @@ p {
 }
 
 .capabilities-section h2 {
-  color: var(--light-orange);
+  color: var(--accent-gold);
   text-align: center;
   margin-bottom: 48px;
+  text-shadow: 0 0 24px var(--glow-gold);
 }
 
 .capabilities-grid {
@@ -515,19 +561,24 @@ p {
 }
 
 .capability-card {
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(32, 56, 36, 0.55);
+  backdrop-filter: blur(16px) saturate(1.3);
+  -webkit-backdrop-filter: blur(16px) saturate(1.3);
+  border: 1px solid var(--border-amber);
   border-radius: var(--border-radius);
   padding: 28px 24px;
   text-align: center;
-  transition: transform var(--transition), background var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background var(--transition);
 }
 
 .capability-card:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-6px);
+  background: rgba(38, 66, 42, 0.75);
+  border-color: var(--accent-cyan);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(95, 251, 241, 0.1),
+    0 0 40px rgba(255, 213, 79, 0.06);
 }
 
 .capability-card .icon {
@@ -543,21 +594,21 @@ p {
 .capability-card .icon svg {
   width: 56px;
   height: 56px;
+  filter: drop-shadow(0 0 6px rgba(255, 179, 71, 0.3));
 }
 
 .capability-card h3 {
-  color: var(--white);
+  color: #FFFBF5;
   font-size: 1.05rem;
   margin-bottom: 8px;
 }
 
 .capability-card p {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(212, 196, 168, 0.85);
   font-size: 0.9rem;
   line-height: 1.5;
 }
 
-/* Center the last card when it's alone in its row */
 .capability-card.centered {
   grid-column: 2;
 }
@@ -566,14 +617,15 @@ p {
    Section — Who We Serve
    ======================================== */
 .serve-section {
-  background: var(--white);
+  background: transparent;
   padding: var(--section-padding);
   text-align: center;
 }
 
 .serve-section h2 {
-  color: var(--dark-green);
+  color: var(--accent-cyan);
   margin-bottom: 40px;
+  text-shadow: 0 0 20px var(--glow-cyan);
 }
 
 .serve-pills {
@@ -586,37 +638,42 @@ p {
 }
 
 .serve-pill {
-  background: var(--off-white);
-  border: 2px solid var(--dark-green);
-  color: var(--dark-green);
+  background: rgba(38, 66, 42, 0.6);
+  border: 2px solid var(--border-cyan);
+  color: var(--accent-cyan);
   padding: 12px 28px;
   border-radius: 50px;
   font-weight: 700;
   font-size: 1rem;
-  transition: background var(--transition), color var(--transition);
+  transition: all var(--transition);
+  backdrop-filter: blur(8px);
 }
 
 .serve-pill:hover {
-  background: var(--dark-green);
-  color: var(--white);
+  background: rgba(95, 251, 241, 0.12);
+  border-color: var(--accent-cyan);
+  color: #FFFBF5;
+  box-shadow: 0 0 20px rgba(95, 251, 241, 0.2), 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
 
 /* ========================================
    Section — CTA Banner
    ======================================== */
 .cta-section {
-  background: linear-gradient(135deg, var(--warm-orange), var(--sunset-pink));
+  background: linear-gradient(135deg, #FF8C42, #F2709C);
   padding: 60px 24px;
   text-align: center;
+  box-shadow: 0 0 60px rgba(255, 140, 66, 0.15) inset;
 }
 
 .cta-section h2 {
-  color: var(--white);
+  color: #FFFBF5;
   margin-bottom: 24px;
 }
 
 .cta-section p {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 251, 245, 0.9);
   margin-bottom: 32px;
   font-size: 1.1rem;
 }
@@ -625,21 +682,22 @@ p {
    Section — About / Mission
    ======================================== */
 .mission-section {
-  background: var(--off-white);
+  background: transparent;
   padding: var(--section-padding);
 }
 
 .mission-section h2 {
-  color: var(--wood-brown);
+  color: var(--accent-gold);
   text-align: center;
   margin-bottom: 24px;
+  text-shadow: 0 0 20px var(--glow-gold);
 }
 
 .mission-text {
   max-width: 800px;
   margin: 0 auto;
   font-size: 1.05rem;
-  color: #444;
+  color: var(--text-secondary);
 }
 
 .mission-text p {
@@ -647,16 +705,17 @@ p {
 }
 
 .highlight-box {
-  background: var(--white);
-  border-left: 4px solid var(--warm-orange);
+  background: var(--bg-card);
+  border: 1px solid var(--border-amber);
+  border-left: 4px solid var(--campfire-orange);
   padding: 24px 28px;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   margin: 32px 0;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), -4px 0 15px rgba(255, 140, 66, 0.06);
 }
 
 .highlight-box h3 {
-  color: var(--warm-orange);
+  color: var(--campfire-orange);
   margin-bottom: 8px;
 }
 
@@ -664,14 +723,15 @@ p {
    Section — Features / What We're Building
    ======================================== */
 .features-section {
-  background: var(--white);
+  background: transparent;
   padding: var(--section-padding);
 }
 
 .features-section h2 {
-  color: var(--dark-green);
+  color: var(--accent-cyan);
   text-align: center;
   margin-bottom: 48px;
+  text-shadow: 0 0 20px var(--glow-cyan);
 }
 
 .features-grid {
@@ -683,11 +743,18 @@ p {
 }
 
 .feature-card {
-  background: var(--off-white);
+  background: var(--bg-card);
   padding: 32px;
   border-radius: var(--border-radius);
-  border-top: 4px solid var(--dark-green);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border-amber);
+  border-top: 4px solid var(--accent-cyan);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(95, 251, 241, 0.06);
 }
 
 .feature-card .icon {
@@ -696,12 +763,12 @@ p {
 }
 
 .feature-card h3 {
-  color: var(--dark-green);
+  color: var(--accent-cyan);
   margin-bottom: 8px;
 }
 
 .feature-card p {
-  color: #555;
+  color: var(--text-secondary);
   font-size: 0.95rem;
 }
 
@@ -709,14 +776,15 @@ p {
    Section — How It Works
    ======================================== */
 .how-section {
-  background: var(--off-white);
+  background: transparent;
   padding: var(--section-padding);
 }
 
 .how-section h2 {
-  color: var(--wood-brown);
+  color: var(--accent-gold);
   text-align: center;
   margin-bottom: 48px;
+  text-shadow: 0 0 20px var(--glow-gold);
 }
 
 .how-steps {
@@ -737,23 +805,24 @@ p {
   flex-shrink: 0;
   width: 52px;
   height: 52px;
-  background: var(--warm-orange);
-  color: var(--white);
+  background: linear-gradient(135deg, #FF8C42, #F2709C);
+  color: #FFFBF5;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
   font-size: 1.3rem;
+  box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
 }
 
 .step-content h3 {
-  color: var(--dark-text);
+  color: var(--text-primary);
   margin-bottom: 4px;
 }
 
 .step-content p {
-  color: #555;
+  color: var(--text-secondary);
   font-size: 0.95rem;
 }
 
@@ -761,14 +830,15 @@ p {
    Section — Contact Info
    ======================================== */
 .contact-info-section {
-  background: var(--white);
+  background: transparent;
   padding: var(--section-padding);
   text-align: center;
 }
 
 .contact-info-section h2 {
-  color: var(--wood-brown);
+  color: var(--accent-gold);
   margin-bottom: 40px;
+  text-shadow: 0 0 20px var(--glow-gold);
 }
 
 .contact-cards {
@@ -780,15 +850,18 @@ p {
 }
 
 .contact-card {
-  background: var(--off-white);
+  background: var(--bg-card);
   padding: 32px 24px;
   border-radius: var(--border-radius);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-  transition: transform var(--transition);
+  border: 1px solid var(--border-amber);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
 .contact-card:hover {
   transform: translateY(-4px);
+  border-color: var(--border-amber-strong);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 20px var(--glow-gold);
 }
 
 .contact-card .icon {
@@ -799,34 +872,47 @@ p {
   align-items: center;
 }
 
+.contact-card .icon svg {
+  filter: drop-shadow(0 0 4px rgba(255, 213, 79, 0.3));
+}
+
 .contact-card h3 {
-  color: var(--dark-text);
+  color: var(--text-primary);
   margin-bottom: 4px;
 }
 
-.contact-card a {
-  color: #C4702E;
+a.contact-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-card a,
+.contact-card span {
+  color: var(--campfire-orange);
   font-weight: 700;
   font-size: 1.05rem;
-  transition: color var(--transition);
+  transition: color var(--transition), text-shadow var(--transition);
 }
 
 .contact-card a:hover {
-  color: var(--sunset-pink);
+  color: var(--evening-pink);
+  text-shadow: 0 0 10px rgba(255, 126, 179, 0.3);
 }
 
 /* ========================================
    Contact Form
    ======================================== */
 .form-section {
-  background: var(--off-white);
+  background: transparent;
   padding: var(--section-padding);
 }
 
 .form-section h2 {
-  color: var(--dark-green);
+  color: var(--accent-cyan);
   text-align: center;
   margin-bottom: 40px;
+  text-shadow: 0 0 20px var(--glow-cyan);
 }
 
 .contact-form {
@@ -846,23 +932,24 @@ p {
 .form-group label {
   font-weight: 700;
   font-size: 0.9rem;
-  color: var(--dark-text);
+  color: var(--text-primary);
 }
 
 .form-group input,
 .form-group textarea {
   padding: 14px 16px;
-  border: 2px solid #ddd;
+  border: 1px solid var(--border-amber);
   border-radius: 8px;
-  background: var(--white);
-  color: var(--dark-text);
-  transition: border-color var(--transition);
+  background: rgba(38, 66, 42, 0.6);
+  color: var(--text-primary);
+  transition: border-color var(--transition), box-shadow var(--transition);
   outline: none;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: var(--warm-orange);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 12px rgba(95, 251, 241, 0.15);
 }
 
 .form-group textarea {
@@ -876,12 +963,97 @@ p {
 }
 
 /* ========================================
-   Footer
+   Feedback Modal
+   ======================================== */
+.feedback-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.feedback-overlay.open {
+  display: flex;
+}
+
+.feedback-modal {
+  position: relative;
+  background: rgba(58, 50, 42, 0.85);
+  backdrop-filter: blur(24px) saturate(1.3);
+  -webkit-backdrop-filter: blur(24px) saturate(1.3);
+  border: 1px solid rgba(255, 193, 7, 0.15);
+  border-radius: 20px;
+  padding: 40px 36px;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+.feedback-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.8rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: color var(--transition);
+}
+
+.feedback-close:hover {
+  color: var(--text-primary);
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.feedback-form textarea {
+  min-height: 120px;
+}
+
+@media (max-width: 480px) {
+  .feedback-modal {
+    padding: 32px 20px;
+    border-radius: 14px;
+  }
+}
+
+/* ========================================
+   Video Banner — full-width blur strip
+   ======================================== */
+.video-banner-section {
+  background: rgba(58, 50, 42, 0.5);
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
+  border-top: 1px solid rgba(255, 193, 7, 0.1);
+  border-bottom: 1px solid rgba(255, 193, 7, 0.1);
+}
+
+.video-banner-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ========================================
+   Footer — darkest layer
    ======================================== */
 .footer {
-  background: var(--dark-text);
-  color: rgba(255, 255, 255, 0.8);
+  background: #142A17;
+  color: rgba(212, 196, 168, 0.7);
   padding: 48px 24px 24px;
+  border-top: 1px solid var(--border-amber);
 }
 
 .footer-inner {
@@ -891,7 +1063,7 @@ p {
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   padding-bottom: 32px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 193, 7, 0.08);
 }
 
 .footer-brand img {
@@ -902,12 +1074,12 @@ p {
 
 .footer-brand p {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(212, 196, 168, 0.4);
 }
 
 .footer-nav h4,
 .footer-contact h4 {
-  color: var(--light-orange);
+  color: var(--accent-gold);
   font-size: 1rem;
   margin-bottom: 16px;
 }
@@ -919,25 +1091,27 @@ p {
 }
 
 .footer-nav a {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(212, 196, 168, 0.5);
   font-size: 0.95rem;
-  transition: color var(--transition);
+  transition: color var(--transition), text-shadow var(--transition);
 }
 
 .footer-nav a:hover {
-  color: var(--light-orange);
+  color: var(--accent-cyan);
+  text-shadow: 0 0 8px var(--glow-cyan);
 }
 
 .footer-contact a {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(212, 196, 168, 0.5);
   font-size: 0.95rem;
-  transition: color var(--transition);
+  transition: color var(--transition), text-shadow var(--transition);
   display: block;
   margin-bottom: 8px;
 }
 
 .footer-contact a:hover {
-  color: var(--light-orange);
+  color: var(--accent-cyan);
+  text-shadow: 0 0 8px var(--glow-cyan);
 }
 
 .footer-bottom {
@@ -946,32 +1120,33 @@ p {
   text-align: center;
   padding-top: 24px;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(212, 196, 168, 0.25);
 }
 
 /* ========================================
    Section — Value Propositions
    ======================================== */
 .value-prop-section {
-  background: var(--off-white);
+  background: transparent;
   padding: var(--section-padding);
 }
 
 .value-prop-section.value-prop-alt {
-  background: var(--white);
+  background: transparent;
 }
 
 .value-prop-section h2 {
-  color: var(--dark-green);
+  color: var(--accent-cyan);
   text-align: center;
   margin-bottom: 16px;
+  text-shadow: 0 0 20px var(--glow-cyan);
 }
 
 .value-prop-intro {
   text-align: center;
   max-width: 700px;
   margin: 0 auto 32px;
-  color: #555;
+  color: var(--text-secondary);
 }
 
 .value-prop-section .highlight-box {
@@ -990,7 +1165,7 @@ p {
 
 .value-bullets li {
   font-size: 1rem;
-  color: #444;
+  color: var(--text-secondary);
   padding-left: 20px;
   position: relative;
   line-height: 1.6;
@@ -1000,7 +1175,7 @@ p {
   content: '\203A';
   position: absolute;
   left: 0;
-  color: var(--warm-orange);
+  color: var(--campfire-orange);
   font-weight: 700;
 }
 
@@ -1008,21 +1183,22 @@ p {
    Section — Use Case Scenarios
    ======================================== */
 .scenarios-section {
-  background: var(--dark-text);
+  background: transparent;
   padding: var(--section-padding);
 }
 
 .scenarios-section h2 {
-  color: var(--light-orange);
+  color: var(--accent-gold);
   text-align: center;
   margin-bottom: 16px;
+  text-shadow: 0 0 20px var(--glow-gold);
 }
 
 .scenarios-intro {
   text-align: center;
   max-width: 650px;
   margin: 0 auto 40px;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
 }
 
 .scenario-grid {
@@ -1034,16 +1210,17 @@ p {
 }
 
 .scenario-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--bg-card);
+  border: 1px solid var(--border-amber);
   border-radius: var(--border-radius);
   padding: 24px 20px;
-  transition: transform var(--transition), background var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
 .scenario-card:hover {
   transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.14);
+  border-color: var(--border-amber-strong);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 15px var(--glow-gold);
 }
 
 .scenario-card .icon {
@@ -1052,13 +1229,13 @@ p {
 }
 
 .scenario-card h3 {
-  color: var(--white);
+  color: var(--text-primary);
   font-size: 1rem;
   margin-bottom: 8px;
 }
 
 .scenario-card p {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
   font-size: 0.88rem;
   line-height: 1.5;
 }
@@ -1067,21 +1244,22 @@ p {
    Section — Compliance
    ======================================== */
 .compliance-section {
-  background: var(--white);
+  background: transparent;
   padding: var(--section-padding);
 }
 
 .compliance-section h2 {
-  color: var(--wood-brown);
+  color: var(--accent-gold);
   text-align: center;
   margin-bottom: 16px;
+  text-shadow: 0 0 20px var(--glow-gold);
 }
 
 .compliance-intro {
   text-align: center;
   max-width: 700px;
   margin: 0 auto 40px;
-  color: #555;
+  color: var(--text-secondary);
 }
 
 .compliance-grid {
@@ -1093,21 +1271,28 @@ p {
 }
 
 .compliance-card {
-  background: var(--off-white);
+  background: var(--bg-card);
   padding: 24px;
   border-radius: var(--border-radius);
-  border-left: 4px solid var(--wood-brown);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border-amber);
+  border-left: 4px solid var(--accent-gold);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.compliance-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 10px var(--glow-gold);
 }
 
 .compliance-card h3 {
-  color: var(--wood-brown);
+  color: var(--accent-gold);
   font-size: 1.05rem;
   margin-bottom: 6px;
 }
 
 .compliance-card p {
-  color: #555;
+  color: var(--text-secondary);
   font-size: 0.95rem;
 }
 
@@ -1241,18 +1426,24 @@ p {
    FAQ Accordion
    ======================================== */
 .faq-item {
-  background: var(--white);
-  border-left: 4px solid var(--warm-orange);
+  background: var(--bg-card);
+  border: 1px solid var(--border-amber);
+  border-left: 4px solid var(--campfire-orange);
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   overflow: hidden;
+  transition: box-shadow var(--transition);
+}
+
+.faq-item[open] {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), -4px 0 15px rgba(255, 140, 66, 0.08);
 }
 
 .faq-item summary {
   padding: 20px 28px;
   font-weight: 800;
   font-size: 1.1rem;
-  color: var(--dark-text);
+  color: var(--text-primary);
   cursor: pointer;
   list-style: none;
   display: flex;
@@ -1262,7 +1453,7 @@ p {
 }
 
 .faq-item summary:hover {
-  background: rgba(0, 0, 0, 0.02);
+  background: rgba(255, 193, 7, 0.04);
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -1273,20 +1464,62 @@ p {
   content: '+';
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--warm-orange);
+  color: var(--campfire-orange);
   margin-left: 16px;
   flex-shrink: 0;
   transition: transform 0.2s;
+  text-shadow: 0 0 8px rgba(255, 140, 66, 0.3);
 }
 
 .faq-item[open] summary::after {
-  content: '−';
+  content: '\2212';
 }
 
 .faq-item p {
   padding: 0 28px 20px;
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.6;
   font-weight: 400;
   font-size: 0.95rem;
+}
+
+/* ========================================
+   Glass Panels — frosted containers
+   ======================================== */
+section:not(.hero) > .container,
+section:not(.hero) > .capabilities-content {
+  background: rgba(58, 50, 42, 0.6);
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
+  border: 1px solid rgba(255, 193, 7, 0.15);
+  border-radius: 20px;
+  padding: 48px 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   Scroll-Reveal Animation
+   ======================================== */
+section:not(.hero) > .container,
+section:not(.hero) > .capabilities-content {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+section:not(.hero) > .container.in-view,
+section:not(.hero) > .capabilities-content.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================
+   Responsive — Glass Panel Adjustments
+   ======================================== */
+@media (max-width: 480px) {
+  section:not(.hero) > .container,
+  section:not(.hero) > .capabilities-content {
+    padding: 32px 20px;
+    border-radius: 14px;
+  }
 }
