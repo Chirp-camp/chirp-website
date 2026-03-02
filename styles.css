@@ -1377,8 +1377,20 @@ a.contact-card {
     max-width: none;
   }
 
+  .problem-grid {
+    gap: 10px;
+  }
+
   .problem-grid .problem-card {
-    flex: 0 1 calc(50% - 12px);
+    flex: 0 1 calc(50% - 5px);
+  }
+
+  .problem-card-compact {
+    padding: 12px 10px;
+  }
+
+  .problem-card-compact p {
+    font-size: 0.8rem;
   }
 
   .features-grid {
