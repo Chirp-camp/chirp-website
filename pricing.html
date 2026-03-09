@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing — Chirp</title>
+  <meta name="description" content="Simple, transparent pricing. $1 per camper per month based on licensed capacity. All features included. No hidden costs.">
+  <link rel="icon" type="image/png" href="DigitalAssets/ChirpAppCon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="ChirpTitle.png" alt="Chirp">
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/pricing" class="active">Pricing</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/">Home</a>
+      <a href="/about">About Us</a>
+      <a href="/pricing" class="active">Pricing</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero hero-short">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>Honest Pricing for Honest Camps</h1>
+      <p>One price. Every feature. No surprises.</p>
+    </div>
+  </section>
+
+  <!-- Pricing Philosophy -->
+  <section class="mission-section section-padding">
+    <div class="container" style="max-width: 860px;">
+      <h2>Our Pricing Philosophy</h2>
+      <div class="mission-text">
+        <p>We believe camp software should be straightforward. No feature gates. No "contact sales for a quote." No discovering hidden costs three months in. You see the price, you get every feature, and you only pay for the capacity you actually have.</p>
+        <p>Every camp on Chirp gets the full platform — weather alerts, emergency broadcasting, staff messaging, audit logs, live maps, camper profiles — all of it. We don't believe in charging more for the features that keep your campers safe.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Price -->
+  <section class="pricing-hero-section section-padding">
+    <div class="container" style="max-width: 960px;">
+
+      <div class="pricing-headline">
+        <div class="pricing-dollar">
+          <span class="pricing-dollar-sign">$</span>
+          <span class="pricing-dollar-amount">1</span>
+        </div>
+        <div class="pricing-dollar-context">
+          <span class="pricing-per">per camper / month</span>
+          <span class="pricing-basis">based on your licensed capacity</span>
+        </div>
+      </div>
+
+      <div class="pricing-minimums">
+        <p>$100/month minimum during active season</p>
+      </div>
+
+      <!-- What's Included -->
+      <div class="pricing-included">
+        <h3>Every plan includes everything</h3>
+        <div class="pricing-features-grid">
+          <div class="pricing-feature-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(76,175,80,0.2)"/><path d="M6 10l3 3 5-5" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Weather Alerts & Emergency Broadcasting</span>
+          </div>
+          <div class="pricing-feature-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(76,175,80,0.2)"/><path d="M6 10l3 3 5-5" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Staff & Parent Communication</span>
+          </div>
+          <div class="pricing-feature-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(76,175,80,0.2)"/><path d="M6 10l3 3 5-5" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Camper Profiles, Maps & Muster Check-ins</span>
+          </div>
+          <div class="pricing-feature-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(76,175,80,0.2)"/><path d="M6 10l3 3 5-5" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Custom Protocols & Audit Logs</span>
+          </div>
+          <div class="pricing-feature-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(76,175,80,0.2)"/><path d="M6 10l3 3 5-5" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Unlimited Staff Users</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sleep Mode -->
+      <div class="pricing-sleep-attach">
+        <div class="pricing-sleep-header">
+          <h3>Sleep Mode — Built for Seasonal Camps</h3>
+          <div class="pricing-sleep-rate">
+            <span class="pricing-sleep-amount">1/3 your active rate</span>
+            <span class="pricing-sleep-min">$50/month minimum</span>
+          </div>
+        </div>
+        <p class="pricing-sleep-tagline">A third of the price for using us a third of the year.</p>
+        <ul class="value-bullets">
+          <li>Be active at least 4 months per billing year to qualify — use Chirp for a third of the year, and we cut your off-season rate to a third</li>
+          <li>One contiguous sleep period per billing year — activate it when your season ends, wake up when you're ready</li>
+          <li>All data preserved — nothing is deleted, nothing is archived, everything is instant when you return</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Calculator -->
+  <section class="pricing-calc-section section-padding">
+    <div class="container" style="max-width: 860px;">
+      <h2>See What You'll Pay</h2>
+      <p class="pricing-calc-subtitle">Drag the slider or type your camp's licensed capacity to see your exact cost. No guessing.</p>
+
+      <div class="pricing-calculator">
+        <div class="calc-input-area">
+          <label for="camperSlider">Licensed Capacity</label>
+          <div class="calc-slider-row">
+            <input type="range" id="camperSlider" min="1" max="1000" value="200" class="calc-slider">
+          </div>
+          <div class="calc-direct-input">
+            <input type="number" id="camperInput" min="1" max="10000" value="200" class="calc-number-input">
+            <span class="calc-input-label">campers on-site at once</span>
+          </div>
+        </div>
+
+        <div class="calc-results">
+          <div class="calc-result-card calc-active">
+            <div class="calc-result-label">Active Season</div>
+            <div class="calc-result-price" id="activePrice">$200</div>
+            <div class="calc-result-per">per month</div>
+          </div>
+          <div class="calc-result-card calc-sleep">
+            <div class="calc-result-label">Sleep Mode</div>
+            <div class="calc-result-price" id="sleepPrice">$67</div>
+            <div class="calc-result-per">per month</div>
+          </div>
+        </div>
+
+        <div class="calc-annual-estimate">
+          <div class="calc-annual-row">
+            <div class="calc-annual-label">
+              <span class="calc-annual-title">Estimated Annual Cost</span>
+              <span class="calc-annual-subtitle">4 months active + 8 months sleep</span>
+            </div>
+            <div class="calc-annual-price" id="annualPrice">$1,203</div>
+          </div>
+          <div class="calc-annual-context" id="perCamperAnnual">That's $6.02 per camper per year</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section class="mission-section section-padding">
+    <div class="container" style="max-width: 960px;">
+      <h2>How Chirp Compares</h2>
+      <div class="mission-text" style="margin-bottom: 32px;">
+        <p>Most camp platforms charge per total camper enrolled — meaning every session multiplies your cost. Chirp charges on licensed capacity: the number of campers on-site at one time. Run 5 sessions with 200 campers each? You pay for 200, not 1,000.</p>
+      </div>
+      <div class="pricing-comparison-table-wrap">
+        <table class="pricing-comparison-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Chirp</th>
+              <th>Industry Typical</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pricing model</td>
+              <td class="pricing-highlight">Per concurrent capacity</td>
+              <td>Per total enrollment</td>
+            </tr>
+            <tr>
+              <td>Feature gating</td>
+              <td class="pricing-highlight">None — full platform</td>
+              <td>Tiered features at 2-3x cost</td>
+            </tr>
+            <tr>
+              <td>Off-season cost</td>
+              <td class="pricing-highlight">1/3 rate (Sleep Mode)</td>
+              <td>Full price or lose data</td>
+            </tr>
+            <tr>
+              <td>Price transparency</td>
+              <td class="pricing-highlight">Published, no sales call</td>
+              <td>"Contact us for a quote"</td>
+            </tr>
+            <tr>
+              <td>Setup fees</td>
+              <td class="pricing-highlight">None</td>
+              <td>$1,500 — $5,000</td>
+            </tr>
+            <tr>
+              <td>Multi-session penalty</td>
+              <td class="pricing-highlight">None</td>
+              <td>Cost multiplied per session</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Optional Integrations -->
+      <div class="pricing-sleep-attach">
+        <h3 style="color: var(--accent-gold); text-shadow: 0 0 15px var(--glow-gold); margin-bottom: 16px;">Optional Integrations</h3>
+        <p style="font-size: 0.95rem;">Chirp's core platform is complete on its own. In the future, we plan to offer optional integrations with third-party providers for camps that want them. These will always be entirely opt-in — your Chirp experience will never be diminished without them.</p>
+        <p style="font-size: 0.95rem; margin-top: 8px;">We're building integrations based on what camp directors actually ask for. Have a request? <a href="/contact" style="color: var(--campfire-orange); text-decoration: underline;">Let us know.</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing FAQ -->
+  <section class="mission-section section-padding">
+    <div class="container" style="max-width: 800px;">
+      <h2>Pricing Questions</h2>
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 32px;">
+
+        <details class="faq-item">
+          <summary>What is "licensed capacity"?</summary>
+          <p>Licensed capacity is the maximum number of campers your camp is permitted to have on-site at one time, as determined by your state or local licensing authority. It's a fixed, verifiable number tied to your facility — not the total number of campers you serve across sessions. This is the number your pricing is based on.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What if my camp runs multiple sessions?</summary>
+          <p>You pay the same monthly rate regardless of how many sessions you run. A camp with a licensed capacity of 250 pays $250/month whether you run one session or five. We price on capacity, not throughput.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>How does sleep mode work?</summary>
+          <p>Use Chirp for at least 4 months per billing year, and you qualify for sleep mode at 1/3 your active rate (minimum $50/month) for the remaining months. A third of the price for using us a third of the year. Sleep mode is one contiguous period — activate it when your season ends, and everything is exactly where you left it when you wake up.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Are there any setup fees or contracts?</summary>
+          <p>No setup fees. No long-term contracts. You can set up Chirp directly from the app in a day or two. If you want us to handle the setup for you, we offer that as a free onboarding service.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What if my camp has fewer than 100 campers?</summary>
+          <p>The minimum active rate is $100/month, which covers camps with up to 100 campers. If your licensed capacity is under 100, you still get the full platform at $100/month. Sleep mode minimum is $50/month.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do you charge per staff member?</summary>
+          <p>No. Unlimited staff users are included at every level. Your directors, counselors, medical staff, and administrators all get full access at no additional cost.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    // Navbar scroll + parallax
+    const navbar = document.getElementById('navbar');
+    function onScroll() {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const panDistance = (window.innerHeight * 3.5) - window.innerHeight;
+      const speed = maxScroll > 0 ? panDistance / maxScroll : 0;
+      document.body.style.setProperty('--parallax-y', (-window.scrollY * speed) + 'px');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Scroll-reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section:not(.hero) > .container').forEach(el => observer.observe(el));
+
+    // Pricing calculator
+    const slider = document.getElementById('camperSlider');
+    const numInput = document.getElementById('camperInput');
+    const activeEl = document.getElementById('activePrice');
+    const sleepEl = document.getElementById('sleepPrice');
+    const annualEl = document.getElementById('annualPrice');
+    const perCamperEl = document.getElementById('perCamperAnnual');
+
+    function calcPricing(campers) {
+      const active = Math.max(100, campers * 1);
+      const sleep = Math.max(50, Math.round(campers * (1/3)));
+      const annual = (active * 4) + (sleep * 8);
+      const perCamper = campers > 0 ? (annual / campers).toFixed(2) : '0.00';
+
+      activeEl.textContent = '$' + active.toLocaleString();
+      sleepEl.textContent = '$' + sleep.toLocaleString();
+      annualEl.textContent = '$' + annual.toLocaleString();
+      perCamperEl.textContent = "That\u2019s $" + perCamper + ' per camper per year';
+    }
+
+    slider.addEventListener('input', () => {
+      numInput.value = slider.value;
+      calcPricing(parseInt(slider.value));
+    });
+
+    numInput.addEventListener('input', () => {
+      let val = parseInt(numInput.value) || 1;
+      if (val > 10000) val = 10000;
+      if (val < 1) val = 1;
+      if (val <= 1000) slider.value = val;
+      calcPricing(val);
+    });
+
+    calcPricing(200);
+  </script>
+
+</body>
+</html>
