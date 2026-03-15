@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing — Chirp</title>
-  <meta name="description" content="Simple, transparent pricing. $1 per camper per month based on licensed capacity. All features included. No hidden costs.">
+  <meta name="description" content="Simple, transparent pricing. $1 per camper per month based on your expected max campers on-site. All features included. No hidden costs.">
   <link rel="icon" type="image/png" href="DigitalAssets/ChirpAppCon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +24,7 @@
         <a href="/about">About Us</a>
         <a href="/pricing" class="active">Pricing</a>
         <a href="/contact">Contact</a>
+        <a href="/get-started" class="nav-cta">Get Started</a>
       </div>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -32,8 +33,9 @@
     <div class="mobile-menu" id="mobileMenu">
       <a href="/">Home</a>
       <a href="/about">About Us</a>
-      <a href="/pricing" class="active">Pricing</a>
+      <a href="/pricing">Pricing</a>
       <a href="/contact">Contact</a>
+      <a href="/get-started" class="nav-cta">Get Started</a>
     </div>
   </nav>
 
@@ -51,7 +53,7 @@
     <div class="container" style="max-width: 860px;">
       <h2>Our Pricing Philosophy</h2>
       <div class="mission-text">
-        <p>We believe camp software should be straightforward. No feature gates. No "contact sales for a quote." No discovering hidden costs three months in. You see the price, you get every feature, and you only pay for the capacity you actually have.</p>
+        <p>We believe camp software should be straightforward. No feature gates. No "contact sales for a quote." No discovering hidden costs three months in. You see the price, you get every feature, and you only pay for the campers you actually have on-site.</p>
         <p>Every camp on Chirp gets the full platform — weather alerts, emergency broadcasting, staff messaging, audit logs, live maps, camper profiles — all of it. We don't believe in charging more for the features that keep your campers safe.</p>
       </div>
     </div>
@@ -68,7 +70,7 @@
         </div>
         <div class="pricing-dollar-context">
           <span class="pricing-per">per camper / month</span>
-          <span class="pricing-basis">based on your licensed capacity</span>
+          <span class="pricing-basis">based on your expected max campers on-site</span>
         </div>
       </div>
 
@@ -126,11 +128,11 @@
   <section class="pricing-calc-section section-padding">
     <div class="container" style="max-width: 860px;">
       <h2>See What You'll Pay</h2>
-      <p class="pricing-calc-subtitle">Drag the slider or type your camp's licensed capacity to see your exact cost. No guessing.</p>
+      <p class="pricing-calc-subtitle">Drag the slider or type your expected max campers on-site at once to see your exact cost. No guessing.</p>
 
       <div class="pricing-calculator">
         <div class="calc-input-area">
-          <label for="camperSlider">Licensed Capacity</label>
+          <label for="camperSlider">Expected Max Campers</label>
           <div class="calc-slider-row">
             <input type="range" id="camperSlider" min="1" max="1000" value="200" class="calc-slider">
           </div>
@@ -172,7 +174,7 @@
     <div class="container" style="max-width: 960px;">
       <h2>How Chirp Compares</h2>
       <div class="mission-text" style="margin-bottom: 32px;">
-        <p>Most camp platforms charge per total camper enrolled — meaning every session multiplies your cost. Chirp charges on licensed capacity: the number of campers on-site at one time. Run 5 sessions with 200 campers each? You pay for 200, not 1,000.</p>
+        <p>Most camp platforms charge per total camper enrolled — meaning every session multiplies your cost. Chirp charges on the max campers you expect on-site at once. Run 5 sessions with 200 campers each? You pay for 200, not 1,000.</p>
       </div>
       <div class="pricing-comparison-table-wrap">
         <table class="pricing-comparison-table">
@@ -234,13 +236,13 @@
       <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 32px;">
 
         <details class="faq-item">
-          <summary>What is "licensed capacity"?</summary>
-          <p>Licensed capacity is the maximum number of campers your camp is permitted to have on-site at one time, as determined by your state or local licensing authority. It's a fixed, verifiable number tied to your facility — not the total number of campers you serve across sessions. This is the number your pricing is based on.</p>
+          <summary>How do you determine my camp's capacity for pricing?</summary>
+          <p>When you sign up, you tell us the maximum number of campers you expect to have on-site at any one time during your active period. That single number sets your monthly rate for the entire period. It's a simple self-declaration — and since Chirp tracks camper profiles and muster check-ins, the platform naturally reflects your actual usage. No license paperwork, no complicated formulas.</p>
         </details>
 
         <details class="faq-item">
           <summary>What if my camp runs multiple sessions?</summary>
-          <p>You pay the same monthly rate regardless of how many sessions you run. A camp with a licensed capacity of 250 pays $250/month whether you run one session or five. We price on capacity, not throughput.</p>
+          <p>You pay the same monthly rate regardless of how many sessions you run. A camp that declares 250 max campers on-site pays $250/month whether you run one session or five. We price on capacity, not throughput.</p>
         </details>
 
         <details class="faq-item">
@@ -255,7 +257,7 @@
 
         <details class="faq-item">
           <summary>What if my camp has fewer than 100 campers?</summary>
-          <p>The minimum active rate is $100/month, which covers camps with up to 100 campers. If your licensed capacity is under 100, you still get the full platform at $100/month. Sleep mode minimum is $50/month.</p>
+          <p>The minimum active rate is $100/month, which covers camps with up to 100 campers. If your expected max is under 100, you still get the full platform at $100/month. Sleep mode minimum is $50/month.</p>
         </details>
 
         <details class="faq-item">

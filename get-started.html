@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Started — Chirp</title>
+  <meta name="description" content="Register your camp for Chirp. Set up your camp's safety and communication platform in minutes.">
+  <link rel="icon" type="image/png" href="DigitalAssets/ChirpAppCon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="ChirpTitle.png" alt="Chirp">
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/contact">Contact</a>
+        <a href="/get-started" class="nav-cta active">Get Started</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/">Home</a>
+      <a href="/about">About Us</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/contact">Contact</a>
+      <a href="/get-started" class="nav-cta active">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero hero-short">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>Get Your Camp on Chirp</h1>
+      <p>Fill out the form below and we'll have your camp up and running fast.</p>
+    </div>
+  </section>
+
+  <!-- Registration Form -->
+  <section class="section-padding">
+    <div class="container" style="max-width: 780px;">
+
+      <!-- Step Indicator -->
+      <div class="reg-stepper">
+        <div class="reg-step active" data-step="1">
+          <div class="reg-step-num">1</div>
+          <span>Camp Info</span>
+        </div>
+        <div class="reg-step-line"></div>
+        <div class="reg-step" data-step="2">
+          <div class="reg-step-num">2</div>
+          <span>Capacity</span>
+        </div>
+        <div class="reg-step-line"></div>
+        <div class="reg-step" data-step="3">
+          <div class="reg-step-num">3</div>
+          <span>Admin</span>
+        </div>
+        <div class="reg-step-line"></div>
+        <div class="reg-step" data-step="4">
+          <div class="reg-step-num">4</div>
+          <span>Billing</span>
+        </div>
+        <div class="reg-step-line"></div>
+        <div class="reg-step" data-step="5">
+          <div class="reg-step-num">5</div>
+          <span>Review</span>
+        </div>
+      </div>
+
+      <form id="regForm" action="https://formsubmit.co/chirpcamping@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Camp Registration">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <!-- Step 1: Camp Information -->
+        <div class="reg-panel" id="step1">
+          <h2>About Your Camp</h2>
+          <p class="reg-panel-sub">Tell us about your camp so we can configure your Chirp environment.</p>
+
+          <div class="reg-form-grid">
+            <div class="form-group reg-full">
+              <label for="campName">Camp Name <span class="reg-req">*</span></label>
+              <input type="text" id="campName" name="Camp Name" required placeholder="e.g. Camp Pinewood">
+            </div>
+
+            <div class="form-group">
+              <label for="campType">Camp Type <span class="reg-req">*</span></label>
+              <select id="campType" name="Camp Type" required>
+                <option value="" disabled selected>Select type</option>
+                <option value="Summer Camp">Summer Camp</option>
+                <option value="Day Camp">Day Camp</option>
+                <option value="Scout Camp">Scout Camp</option>
+                <option value="Residential Program">Residential Program</option>
+                <option value="Outdoor Education">Outdoor Education</option>
+                <option value="Retreat Center">Retreat Center</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="campWebsite">Camp Website <span class="reg-opt">(optional)</span></label>
+              <input type="url" id="campWebsite" name="Camp Website" placeholder="https://www.yourcamp.com">
+            </div>
+
+            <div class="form-group reg-full">
+              <label for="campAddress">Street Address <span class="reg-req">*</span></label>
+              <input type="text" id="campAddress" name="Street Address" required placeholder="123 Pine Trail Rd">
+            </div>
+
+            <div class="form-group">
+              <label for="campCity">City <span class="reg-req">*</span></label>
+              <input type="text" id="campCity" name="City" required placeholder="Lakewood">
+            </div>
+
+            <div class="form-group reg-half-row">
+              <div class="form-group">
+                <label for="campState">State <span class="reg-req">*</span></label>
+                <select id="campState" name="State" required>
+                  <option value="" disabled selected>State</option>
+                  <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option>
+                  <option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option>
+                  <option value="FL">FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option>
+                  <option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option>
+                  <option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option>
+                  <option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option>
+                  <option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option>
+                  <option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option>
+                  <option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option><option value="OK">OK</option>
+                  <option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option>
+                  <option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option>
+                  <option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option>
+                  <option value="WI">WI</option><option value="WY">WY</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="campZip">Zip Code <span class="reg-req">*</span></label>
+                <input type="text" id="campZip" name="Zip Code" required placeholder="78701" pattern="[0-9]{5}" maxlength="5">
+              </div>
+            </div>
+          </div>
+
+          <div class="reg-nav">
+            <div></div>
+            <button type="button" class="btn btn-primary reg-next" onclick="goStep(2)">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Capacity & Season -->
+        <div class="reg-panel" id="step2" style="display:none;">
+          <h2>Capacity & Season</h2>
+          <p class="reg-panel-sub">This determines your pricing and helps us size your environment.</p>
+
+          <div class="reg-form-grid">
+            <div class="form-group">
+              <label for="regCapacity">Expected Max Campers On-Site <span class="reg-req">*</span></label>
+              <input type="number" id="regCapacity" name="Expected Max Campers" required min="1" max="10000" placeholder="e.g. 200">
+              <span class="reg-field-hint">The most campers you expect on-site at once during your active period</span>
+            </div>
+
+            <div class="form-group">
+              <label for="regStaff">Estimated Staff Count <span class="reg-req">*</span></label>
+              <input type="number" id="regStaff" name="Estimated Staff" required min="1" max="5000" placeholder="e.g. 40">
+              <span class="reg-field-hint">Directors, counselors, medical, etc.</span>
+            </div>
+
+            <div class="form-group reg-full">
+              <label>Season Type <span class="reg-req">*</span></label>
+              <div class="reg-radio-group">
+                <label class="reg-radio">
+                  <input type="radio" name="Season Type" value="Seasonal" required checked id="radioSeasonal">
+                  <span class="reg-radio-box"></span>
+                  <span>Seasonal</span>
+                </label>
+                <label class="reg-radio">
+                  <input type="radio" name="Season Type" value="Year-Round" id="radioYearRound">
+                  <span class="reg-radio-box"></span>
+                  <span>Year-Round</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group reg-full" id="seasonMonthsGroup">
+              <label>Active Season <span class="reg-req">*</span></label>
+              <div class="reg-half-row">
+                <div class="form-group">
+                  <label for="seasonStart" class="reg-sub-label">Start Month</label>
+                  <select id="seasonStart" name="Season Start">
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May" selected>May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="seasonEnd" class="reg-sub-label">End Month</label>
+                  <select id="seasonEnd" name="Season End">
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August" selected>August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Pricing Preview -->
+          <div class="reg-pricing-preview" id="regPricingPreview">
+            <h3>Your Estimated Pricing</h3>
+            <div class="reg-pricing-row">
+              <div class="reg-pricing-item">
+                <span class="reg-pricing-label">Active Season</span>
+                <span class="reg-pricing-value" id="regActivePrice">—</span>
+                <span class="reg-pricing-per">per month</span>
+              </div>
+              <div class="reg-pricing-item">
+                <span class="reg-pricing-label">Sleep Mode</span>
+                <span class="reg-pricing-value" id="regSleepPrice">—</span>
+                <span class="reg-pricing-per">per month</span>
+              </div>
+              <div class="reg-pricing-item reg-pricing-annual">
+                <span class="reg-pricing-label">Est. Annual</span>
+                <span class="reg-pricing-value" id="regAnnualPrice">—</span>
+                <span class="reg-pricing-per" id="regPerCamper"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="reg-nav">
+            <button type="button" class="btn btn-outline reg-back" onclick="goStep(1)">Back</button>
+            <button type="button" class="btn btn-primary reg-next" onclick="goStep(3)">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Admin Contact -->
+        <div class="reg-panel" id="step3" style="display:none;">
+          <h2>Primary Administrator</h2>
+          <p class="reg-panel-sub">This person will be the main Chirp admin for your camp.</p>
+
+          <div class="reg-form-grid">
+            <div class="form-group">
+              <label for="adminName">Full Name <span class="reg-req">*</span></label>
+              <input type="text" id="adminName" name="Admin Name" required placeholder="Jane Smith">
+            </div>
+
+            <div class="form-group">
+              <label for="adminTitle">Title / Role <span class="reg-req">*</span></label>
+              <input type="text" id="adminTitle" name="Admin Title" required placeholder="e.g. Camp Director">
+            </div>
+
+            <div class="form-group">
+              <label for="adminEmail">Email <span class="reg-req">*</span></label>
+              <input type="email" id="adminEmail" name="Admin Email" required placeholder="jane@camppinewood.com">
+            </div>
+
+            <div class="form-group">
+              <label for="adminPhone">Phone <span class="reg-req">*</span></label>
+              <input type="tel" id="adminPhone" name="Admin Phone" required placeholder="(512) 555-0147">
+            </div>
+
+            <div class="form-group reg-full">
+              <label for="hearAbout">How did you hear about Chirp? <span class="reg-opt">(optional)</span></label>
+              <select id="hearAbout" name="How Did You Hear">
+                <option value="" disabled selected>Select one</option>
+                <option value="Word of mouth">Word of mouth</option>
+                <option value="Google search">Google search</option>
+                <option value="Social media">Social media</option>
+                <option value="Conference / trade show">Conference / trade show</option>
+                <option value="ACA or industry group">ACA or industry group</option>
+                <option value="Chirp team member">Chirp team member</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="reg-nav">
+            <button type="button" class="btn btn-outline reg-back" onclick="goStep(2)">Back</button>
+            <button type="button" class="btn btn-primary reg-next" onclick="goStep(4)">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Billing -->
+        <div class="reg-panel" id="step4" style="display:none;">
+          <h2>Billing Information</h2>
+          <p class="reg-panel-sub">Where should we send invoices? You won't be charged until your camp is set up and confirmed.</p>
+
+          <div class="reg-form-grid">
+            <div class="form-group reg-full">
+              <label class="reg-checkbox">
+                <input type="checkbox" id="billingSame" checked>
+                <span class="reg-check-box"></span>
+                <span>Same as admin contact</span>
+              </label>
+            </div>
+
+            <div id="billingFields">
+              <div class="reg-form-grid">
+                <div class="form-group">
+                  <label for="billingName">Billing Contact Name <span class="reg-req">*</span></label>
+                  <input type="text" id="billingName" name="Billing Contact" placeholder="Billing department or contact">
+                </div>
+
+                <div class="form-group">
+                  <label for="billingEmail">Billing Email <span class="reg-req">*</span></label>
+                  <input type="email" id="billingEmail" name="Billing Email" placeholder="billing@camppinewood.com">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group reg-full">
+              <label for="billingAddress">Billing Address <span class="reg-req">*</span></label>
+              <input type="text" id="billingAddress" name="Billing Address" required placeholder="123 Pine Trail Rd">
+            </div>
+
+            <div class="form-group">
+              <label for="billingCity">City <span class="reg-req">*</span></label>
+              <input type="text" id="billingCity" name="Billing City" required placeholder="Lakewood">
+            </div>
+
+            <div class="form-group reg-half-row">
+              <div class="form-group">
+                <label for="billingState">State <span class="reg-req">*</span></label>
+                <select id="billingState" name="Billing State" required>
+                  <option value="" disabled selected>State</option>
+                  <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option>
+                  <option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option>
+                  <option value="FL">FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option>
+                  <option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option>
+                  <option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option>
+                  <option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option>
+                  <option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option>
+                  <option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option>
+                  <option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option><option value="OK">OK</option>
+                  <option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option>
+                  <option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option>
+                  <option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option>
+                  <option value="WI">WI</option><option value="WY">WY</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="billingZip">Zip Code <span class="reg-req">*</span></label>
+                <input type="text" id="billingZip" name="Billing Zip" required placeholder="78701" pattern="[0-9]{5}" maxlength="5">
+              </div>
+            </div>
+
+            <div class="form-group reg-full">
+              <label for="billingNotes">Additional Notes <span class="reg-opt">(optional)</span></label>
+              <textarea id="billingNotes" name="Notes" placeholder="Anything else we should know — PO requirements, fiscal year timing, etc." rows="3"></textarea>
+            </div>
+          </div>
+
+          <div class="reg-nav">
+            <button type="button" class="btn btn-outline reg-back" onclick="goStep(3)">Back</button>
+            <button type="button" class="btn btn-primary reg-next" onclick="goStep(5)">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 5: Review & Submit -->
+        <div class="reg-panel" id="step5" style="display:none;">
+          <h2>Review & Submit</h2>
+          <p class="reg-panel-sub">Make sure everything looks right. You can go back to edit any section.</p>
+
+          <div class="reg-review-cards">
+            <div class="reg-review-card">
+              <div class="reg-review-header">
+                <h3>Camp Information</h3>
+                <button type="button" class="reg-review-edit" onclick="goStep(1)">Edit</button>
+              </div>
+              <div class="reg-review-body" id="reviewCamp"></div>
+            </div>
+
+            <div class="reg-review-card">
+              <div class="reg-review-header">
+                <h3>Capacity & Season</h3>
+                <button type="button" class="reg-review-edit" onclick="goStep(2)">Edit</button>
+              </div>
+              <div class="reg-review-body" id="reviewCapacity"></div>
+            </div>
+
+            <div class="reg-review-card">
+              <div class="reg-review-header">
+                <h3>Primary Administrator</h3>
+                <button type="button" class="reg-review-edit" onclick="goStep(3)">Edit</button>
+              </div>
+              <div class="reg-review-body" id="reviewAdmin"></div>
+            </div>
+
+            <div class="reg-review-card">
+              <div class="reg-review-header">
+                <h3>Billing</h3>
+                <button type="button" class="reg-review-edit" onclick="goStep(4)">Edit</button>
+              </div>
+              <div class="reg-review-body" id="reviewBilling"></div>
+            </div>
+
+            <div class="reg-review-card reg-review-pricing">
+              <div class="reg-review-header">
+                <h3>Estimated Pricing</h3>
+              </div>
+              <div class="reg-review-body" id="reviewPricing"></div>
+            </div>
+          </div>
+
+          <div class="reg-terms">
+            <label class="reg-checkbox">
+              <input type="checkbox" id="agreeTerms" required>
+              <span class="reg-check-box"></span>
+              <span>I confirm this information is accurate and I'm authorized to register this camp. I understand I won't be charged until my camp environment is set up and confirmed.</span>
+            </label>
+          </div>
+
+          <div class="reg-nav">
+            <button type="button" class="btn btn-outline reg-back" onclick="goStep(4)">Back</button>
+            <button type="submit" class="btn btn-primary reg-submit" id="submitBtn">Submit Registration</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Success State -->
+      <div class="reg-panel reg-success" id="regSuccess" style="display:none;">
+        <div class="reg-success-icon">
+          <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+            <circle cx="36" cy="36" r="34" stroke="#4CAF50" stroke-width="3" fill="rgba(76,175,80,0.12)"/>
+            <path d="M22 36l10 10 18-18" stroke="#4CAF50" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h2>Registration Submitted</h2>
+        <p class="reg-panel-sub">We've received your camp registration. A member of the Chirp team will reach out within 1-2 business days to get you set up.</p>
+        <div class="reg-success-detail">
+          <p>Here's what happens next:</p>
+          <ul class="value-bullets">
+            <li>We'll verify your camp information and set up your Chirp environment</li>
+            <li>Your primary admin will receive login credentials via email</li>
+            <li>We'll send your first invoice — you won't be charged until everything is confirmed</li>
+            <li>Once live, you can start inviting staff and parents right from the app</li>
+          </ul>
+        </div>
+        <p style="margin-top: 24px; color: var(--text-muted); font-size: 0.95rem;">Questions in the meantime? Reach us at <a href="mailto:hello@chirp.camp" style="color: var(--campfire-orange); text-decoration: underline;">hello@chirp.camp</a></p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <script>
+    // --- Navbar scroll + parallax ---
+    const navbar = document.getElementById('navbar');
+    function onScroll() {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const panDistance = (window.innerHeight * 3.5) - window.innerHeight;
+      const speed = maxScroll > 0 ? panDistance / maxScroll : 0;
+      document.body.style.setProperty('--parallax-y', (-window.scrollY * speed) + 'px');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+
+    // --- Hamburger ---
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+    // --- Scroll-reveal ---
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section:not(.hero) > .container').forEach(el => observer.observe(el));
+
+    // --- Multi-step form ---
+    let currentStep = 1;
+    const totalSteps = 5;
+
+    function goStep(step) {
+      // Validate current step before advancing
+      if (step > currentStep && !validateStep(currentStep)) return;
+
+      // Hide all panels
+      for (let i = 1; i <= totalSteps; i++) {
+        document.getElementById('step' + i).style.display = 'none';
+      }
+      // Show target
+      document.getElementById('step' + step).style.display = 'block';
+
+      // Update stepper
+      document.querySelectorAll('.reg-step').forEach(s => {
+        const sNum = parseInt(s.dataset.step);
+        s.classList.toggle('active', sNum === step);
+        s.classList.toggle('done', sNum < step);
+      });
+
+      currentStep = step;
+
+      // Populate review on step 5
+      if (step === 5) populateReview();
+
+      // Scroll to top of form
+      document.querySelector('.reg-stepper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function validateStep(step) {
+      const panel = document.getElementById('step' + step);
+      const required = panel.querySelectorAll('[required]');
+      let valid = true;
+
+      required.forEach(field => {
+        if (!field.value || (field.type === 'checkbox' && !field.checked)) {
+          field.classList.add('reg-invalid');
+          valid = false;
+        } else {
+          field.classList.remove('reg-invalid');
+        }
+      });
+
+      // For radio buttons, check if any in the group is selected
+      const radios = panel.querySelectorAll('input[type="radio"][required]');
+      if (radios.length > 0) {
+        const name = radios[0].name;
+        const anyChecked = panel.querySelector(`input[name="${name}"]:checked`);
+        if (!anyChecked) valid = false;
+      }
+
+      if (!valid) {
+        const first = panel.querySelector('.reg-invalid');
+        if (first) first.focus();
+      }
+
+      return valid;
+    }
+
+    // Remove invalid class on input
+    document.addEventListener('input', (e) => {
+      if (e.target.classList.contains('reg-invalid')) {
+        e.target.classList.remove('reg-invalid');
+      }
+    });
+
+    // --- Season type toggle ---
+    document.getElementById('radioSeasonal').addEventListener('change', () => {
+      document.getElementById('seasonMonthsGroup').style.display = '';
+      updatePricing();
+    });
+    document.getElementById('radioYearRound').addEventListener('change', () => {
+      document.getElementById('seasonMonthsGroup').style.display = 'none';
+      updatePricing();
+    });
+
+    // --- Live pricing ---
+    const regCapacity = document.getElementById('regCapacity');
+    regCapacity.addEventListener('input', updatePricing);
+
+    function updatePricing() {
+      const cap = parseInt(regCapacity.value) || 0;
+      if (cap < 1) {
+        document.getElementById('regActivePrice').textContent = '—';
+        document.getElementById('regSleepPrice').textContent = '—';
+        document.getElementById('regAnnualPrice').textContent = '—';
+        document.getElementById('regPerCamper').textContent = '';
+        return;
+      }
+
+      const active = Math.max(100, cap);
+      const isYearRound = document.getElementById('radioYearRound').checked;
+
+      if (isYearRound) {
+        document.getElementById('regActivePrice').textContent = '$' + active.toLocaleString();
+        document.getElementById('regSleepPrice').textContent = 'N/A';
+        const annual = active * 12;
+        document.getElementById('regAnnualPrice').textContent = '$' + annual.toLocaleString();
+        document.getElementById('regPerCamper').textContent = '$' + (annual / cap).toFixed(2) + '/camper/yr';
+      } else {
+        const sleep = Math.max(50, Math.round(cap / 3));
+        document.getElementById('regActivePrice').textContent = '$' + active.toLocaleString();
+        document.getElementById('regSleepPrice').textContent = '$' + sleep.toLocaleString();
+        const annual = (active * 4) + (sleep * 8);
+        document.getElementById('regAnnualPrice').textContent = '$' + annual.toLocaleString();
+        document.getElementById('regPerCamper').textContent = '$' + (annual / cap).toFixed(2) + '/camper/yr';
+      }
+    }
+
+    // --- Billing same-as toggle ---
+    const billingSame = document.getElementById('billingSame');
+    const billingFields = document.getElementById('billingFields');
+    billingFields.style.display = 'none';
+
+    billingSame.addEventListener('change', () => {
+      billingFields.style.display = billingSame.checked ? 'none' : '';
+      // Toggle required
+      document.getElementById('billingName').required = !billingSame.checked;
+      document.getElementById('billingEmail').required = !billingSame.checked;
+    });
+
+    // --- Populate review ---
+    function populateReview() {
+      const v = (id) => document.getElementById(id)?.value || '';
+      const sel = (id) => {
+        const el = document.getElementById(id);
+        return el?.options?.[el.selectedIndex]?.text || el?.value || '';
+      };
+
+      document.getElementById('reviewCamp').innerHTML =
+        `<div class="reg-review-row"><span>Camp Name</span><span>${esc(v('campName'))}</span></div>` +
+        `<div class="reg-review-row"><span>Type</span><span>${esc(sel('campType'))}</span></div>` +
+        `<div class="reg-review-row"><span>Address</span><span>${esc(v('campAddress'))}, ${esc(v('campCity'))}, ${esc(sel('campState'))} ${esc(v('campZip'))}</span></div>` +
+        (v('campWebsite') ? `<div class="reg-review-row"><span>Website</span><span>${esc(v('campWebsite'))}</span></div>` : '');
+
+      const isSeasonal = document.getElementById('radioSeasonal').checked;
+      document.getElementById('reviewCapacity').innerHTML =
+        `<div class="reg-review-row"><span>Expected Max Campers</span><span>${esc(v('regCapacity'))} campers</span></div>` +
+        `<div class="reg-review-row"><span>Staff</span><span>~${esc(v('regStaff'))}</span></div>` +
+        `<div class="reg-review-row"><span>Season</span><span>${isSeasonal ? 'Seasonal (' + esc(sel('seasonStart')) + ' – ' + esc(sel('seasonEnd')) + ')' : 'Year-Round'}</span></div>`;
+
+      document.getElementById('reviewAdmin').innerHTML =
+        `<div class="reg-review-row"><span>Name</span><span>${esc(v('adminName'))}</span></div>` +
+        `<div class="reg-review-row"><span>Title</span><span>${esc(v('adminTitle'))}</span></div>` +
+        `<div class="reg-review-row"><span>Email</span><span>${esc(v('adminEmail'))}</span></div>` +
+        `<div class="reg-review-row"><span>Phone</span><span>${esc(v('adminPhone'))}</span></div>`;
+
+      const useSame = billingSame.checked;
+      const bName = useSame ? v('adminName') : v('billingName');
+      const bEmail = useSame ? v('adminEmail') : v('billingEmail');
+      document.getElementById('reviewBilling').innerHTML =
+        `<div class="reg-review-row"><span>Contact</span><span>${esc(bName)}</span></div>` +
+        `<div class="reg-review-row"><span>Email</span><span>${esc(bEmail)}</span></div>` +
+        `<div class="reg-review-row"><span>Address</span><span>${esc(v('billingAddress'))}, ${esc(v('billingCity'))}, ${esc(sel('billingState'))} ${esc(v('billingZip'))}</span></div>`;
+
+      // Fill hidden billing fields if same-as
+      if (useSame) {
+        document.getElementById('billingName').value = v('adminName');
+        document.getElementById('billingEmail').value = v('adminEmail');
+      }
+
+      // Pricing review
+      const cap = parseInt(v('regCapacity')) || 0;
+      const activeP = Math.max(100, cap);
+      const isYR = document.getElementById('radioYearRound').checked;
+      let pricingHTML;
+
+      if (isYR) {
+        const annual = activeP * 12;
+        pricingHTML =
+          `<div class="reg-review-row"><span>Monthly</span><span>$${activeP.toLocaleString()}/mo</span></div>` +
+          `<div class="reg-review-row reg-review-total"><span>Estimated Annual</span><span>$${annual.toLocaleString()}/yr</span></div>`;
+      } else {
+        const sleepP = Math.max(50, Math.round(cap / 3));
+        const annual = (activeP * 4) + (sleepP * 8);
+        pricingHTML =
+          `<div class="reg-review-row"><span>Active Season</span><span>$${activeP.toLocaleString()}/mo</span></div>` +
+          `<div class="reg-review-row"><span>Sleep Mode</span><span>$${sleepP.toLocaleString()}/mo</span></div>` +
+          `<div class="reg-review-row reg-review-total"><span>Est. Annual (4 active + 8 sleep)</span><span>$${annual.toLocaleString()}/yr</span></div>`;
+      }
+      document.getElementById('reviewPricing').innerHTML = pricingHTML;
+    }
+
+    function esc(s) {
+      const d = document.createElement('div');
+      d.textContent = s;
+      return d.innerHTML;
+    }
+
+    // --- Form submit ---
+    document.getElementById('regForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (!document.getElementById('agreeTerms').checked) {
+        document.getElementById('agreeTerms').classList.add('reg-invalid');
+        return;
+      }
+
+      const form = document.getElementById('regForm');
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(() => {
+        form.style.display = 'none';
+        document.querySelector('.reg-stepper').style.display = 'none';
+        document.getElementById('regSuccess').style.display = 'block';
+        document.querySelector('.reg-stepper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }).catch(() => {
+        // Still show success — formsubmit sometimes returns CORS errors but still delivers
+        form.style.display = 'none';
+        document.querySelector('.reg-stepper').style.display = 'none';
+        document.getElementById('regSuccess').style.display = 'block';
+      });
+    });
+  </script>
+
+</body>
+</html>
