@@ -403,8 +403,7 @@
     function onScroll() {
       navbar.classList.toggle('scrolled', window.scrollY > 50);
       var maxScroll = document.body.scrollHeight - window.innerHeight;
-      var panDistance = (window.innerHeight * 3.5) - window.innerHeight;
-      var speed = maxScroll > 0 ? panDistance / maxScroll : 0;
+      var speed = maxScroll > 0 ? 0.35 : 0;
       document.body.style.setProperty('--parallax-y', (-window.scrollY * speed) + 'px');
     }
     window.addEventListener('scroll', onScroll, { passive: true });
