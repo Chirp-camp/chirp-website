@@ -44,7 +44,7 @@
     <div class="hero-bg"></div>
     <div class="hero-content">
       <h1>Get Your Camp on Chirp</h1>
-      <p>Fill out the form below and we'll have your camp up and running fast.</p>
+      <p>Fill out the form below and your camp will be live in minutes.</p>
     </div>
   </section>
 
@@ -66,24 +66,16 @@
         <div class="reg-step-line"></div>
         <div class="reg-step" data-step="3">
           <div class="reg-step-num">3</div>
-          <span>Admin</span>
+          <span>Your Account</span>
         </div>
         <div class="reg-step-line"></div>
         <div class="reg-step" data-step="4">
           <div class="reg-step-num">4</div>
-          <span>Billing</span>
-        </div>
-        <div class="reg-step-line"></div>
-        <div class="reg-step" data-step="5">
-          <div class="reg-step-num">5</div>
           <span>Review</span>
         </div>
       </div>
 
-      <form id="regForm" action="https://formsubmit.co/chirpcamping@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="New Camp Registration">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
+      <form id="regForm" novalidate>
 
         <!-- Step 1: Camp Information -->
         <div class="reg-panel" id="step1">
@@ -161,7 +153,7 @@
         <!-- Step 2: Capacity & Season -->
         <div class="reg-panel" id="step2" style="display:none;">
           <h2>Capacity & Season</h2>
-          <p class="reg-panel-sub">This determines your pricing and helps us size your environment.</p>
+          <p class="reg-panel-sub">This helps us size your environment and determine pricing.</p>
 
           <div class="reg-form-grid">
             <div class="form-group">
@@ -261,10 +253,10 @@
           </div>
         </div>
 
-        <!-- Step 3: Admin Contact -->
+        <!-- Step 3: Admin Account -->
         <div class="reg-panel" id="step3" style="display:none;">
-          <h2>Primary Administrator</h2>
-          <p class="reg-panel-sub">This person will be the main Chirp admin for your camp.</p>
+          <h2>Create Your Admin Account</h2>
+          <p class="reg-panel-sub">This will be the primary administrator for your camp on Chirp.</p>
 
           <div class="reg-form-grid">
             <div class="form-group">
@@ -273,8 +265,8 @@
             </div>
 
             <div class="form-group">
-              <label for="adminTitle">Title / Role <span class="reg-req">*</span></label>
-              <input type="text" id="adminTitle" name="Admin Title" required placeholder="e.g. Camp Director">
+              <label for="adminTitle">Title / Role <span class="reg-opt">(optional)</span></label>
+              <input type="text" id="adminTitle" name="Admin Title" placeholder="e.g. Camp Director">
             </div>
 
             <div class="form-group">
@@ -285,6 +277,17 @@
             <div class="form-group">
               <label for="adminPhone">Phone <span class="reg-req">*</span></label>
               <input type="tel" id="adminPhone" name="Admin Phone" required placeholder="(512) 555-0147">
+            </div>
+
+            <div class="form-group">
+              <label for="adminPassword">Password <span class="reg-req">*</span></label>
+              <input type="password" id="adminPassword" name="Admin Password" required minlength="8" placeholder="Create a strong password">
+              <span class="reg-field-hint">At least 8 characters with uppercase, lowercase, and a number</span>
+            </div>
+
+            <div class="form-group">
+              <label for="adminPasswordConfirm">Confirm Password <span class="reg-req">*</span></label>
+              <input type="password" id="adminPasswordConfirm" required minlength="8" placeholder="Re-enter your password">
             </div>
 
             <div class="form-group reg-full">
@@ -308,84 +311,8 @@
           </div>
         </div>
 
-        <!-- Step 4: Billing -->
+        <!-- Step 4: Review & Submit -->
         <div class="reg-panel" id="step4" style="display:none;">
-          <h2>Billing Information</h2>
-          <p class="reg-panel-sub">Where should we send invoices? You won't be charged until your camp is set up and confirmed.</p>
-
-          <div class="reg-form-grid">
-            <div class="form-group reg-full">
-              <label class="reg-checkbox">
-                <input type="checkbox" id="billingSame" checked>
-                <span class="reg-check-box"></span>
-                <span>Same as admin contact</span>
-              </label>
-            </div>
-
-            <div id="billingFields">
-              <div class="reg-form-grid">
-                <div class="form-group">
-                  <label for="billingName">Billing Contact Name <span class="reg-req">*</span></label>
-                  <input type="text" id="billingName" name="Billing Contact" placeholder="Billing department or contact">
-                </div>
-
-                <div class="form-group">
-                  <label for="billingEmail">Billing Email <span class="reg-req">*</span></label>
-                  <input type="email" id="billingEmail" name="Billing Email" placeholder="billing@camppinewood.com">
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group reg-full">
-              <label for="billingAddress">Billing Address <span class="reg-req">*</span></label>
-              <input type="text" id="billingAddress" name="Billing Address" required placeholder="123 Pine Trail Rd">
-            </div>
-
-            <div class="form-group">
-              <label for="billingCity">City <span class="reg-req">*</span></label>
-              <input type="text" id="billingCity" name="Billing City" required placeholder="Lakewood">
-            </div>
-
-            <div class="form-group reg-half-row">
-              <div class="form-group">
-                <label for="billingState">State <span class="reg-req">*</span></label>
-                <select id="billingState" name="Billing State" required>
-                  <option value="" disabled selected>State</option>
-                  <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option>
-                  <option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option>
-                  <option value="FL">FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option>
-                  <option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option>
-                  <option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option>
-                  <option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option>
-                  <option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option>
-                  <option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option>
-                  <option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option><option value="OK">OK</option>
-                  <option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option>
-                  <option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option>
-                  <option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option>
-                  <option value="WI">WI</option><option value="WY">WY</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="billingZip">Zip Code <span class="reg-req">*</span></label>
-                <input type="text" id="billingZip" name="Billing Zip" required placeholder="78701" pattern="[0-9]{5}" maxlength="5">
-              </div>
-            </div>
-
-            <div class="form-group reg-full">
-              <label for="billingNotes">Additional Notes <span class="reg-opt">(optional)</span></label>
-              <textarea id="billingNotes" name="Notes" placeholder="Anything else we should know — PO requirements, fiscal year timing, etc." rows="3"></textarea>
-            </div>
-          </div>
-
-          <div class="reg-nav">
-            <button type="button" class="btn btn-outline reg-back" onclick="goStep(3)">Back</button>
-            <button type="button" class="btn btn-primary reg-next" onclick="goStep(5)">Next</button>
-          </div>
-        </div>
-
-        <!-- Step 5: Review & Submit -->
-        <div class="reg-panel" id="step5" style="display:none;">
           <h2>Review & Submit</h2>
           <p class="reg-panel-sub">Make sure everything looks right. You can go back to edit any section.</p>
 
@@ -408,18 +335,10 @@
 
             <div class="reg-review-card">
               <div class="reg-review-header">
-                <h3>Primary Administrator</h3>
+                <h3>Your Account</h3>
                 <button type="button" class="reg-review-edit" onclick="goStep(3)">Edit</button>
               </div>
               <div class="reg-review-body" id="reviewAdmin"></div>
-            </div>
-
-            <div class="reg-review-card">
-              <div class="reg-review-header">
-                <h3>Billing</h3>
-                <button type="button" class="reg-review-edit" onclick="goStep(4)">Edit</button>
-              </div>
-              <div class="reg-review-body" id="reviewBilling"></div>
             </div>
 
             <div class="reg-review-card reg-review-pricing">
@@ -434,13 +353,16 @@
             <label class="reg-checkbox">
               <input type="checkbox" id="agreeTerms" required>
               <span class="reg-check-box"></span>
-              <span>I confirm this information is accurate and I'm authorized to register this camp. I understand I won't be charged until my camp environment is set up and confirmed.</span>
+              <span>I confirm this information is accurate and I'm authorized to register this camp.</span>
             </label>
           </div>
 
+          <!-- Error banner (hidden by default) -->
+          <div id="signupError" style="display:none; background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.3); border-radius: 10px; padding: 14px 18px; margin-bottom: 16px; color: #dc2626; font-size: 0.95rem;"></div>
+
           <div class="reg-nav">
-            <button type="button" class="btn btn-outline reg-back" onclick="goStep(4)">Back</button>
-            <button type="submit" class="btn btn-primary reg-submit" id="submitBtn">Submit Registration</button>
+            <button type="button" class="btn btn-outline reg-back" onclick="goStep(3)">Back</button>
+            <button type="submit" class="btn btn-primary reg-submit" id="submitBtn">Create My Camp</button>
           </div>
         </div>
       </form>
@@ -453,18 +375,19 @@
             <path d="M22 36l10 10 18-18" stroke="#4CAF50" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <h2>Registration Submitted</h2>
-        <p class="reg-panel-sub">We've received your camp registration. A member of the Chirp team will reach out within 1-2 business days to get you set up.</p>
+        <h2>Your Camp Is Live!</h2>
+        <p class="reg-panel-sub"><strong id="successCampName"></strong> is now set up on Chirp. You have a <strong>14-day free trial</strong> &mdash; no payment needed today.</p>
         <div class="reg-success-detail">
-          <p>Here's what happens next:</p>
+          <p>Here's what to do next:</p>
           <ul class="value-bullets">
-            <li>We'll verify your camp information and set up your Chirp environment</li>
-            <li>Your primary admin will receive login credentials via email</li>
-            <li>We'll send your first invoice — you won't be charged until everything is confirmed</li>
-            <li>Once live, you can start inviting staff and parents right from the app</li>
+            <li>Download the <strong>Chirp app</strong> from the App Store or Google Play</li>
+            <li>Log in with <strong id="successEmail"></strong> and the password you just created</li>
+            <li>Invite your staff from the app &mdash; they'll get an email to join</li>
+            <li>Weather alerts are already active for your camp location</li>
+            <li>Subscribe anytime during your trial from Settings in the app</li>
           </ul>
         </div>
-        <p style="margin-top: 24px; color: var(--text-muted); font-size: 0.95rem;">Questions in the meantime? Reach us at <a href="mailto:hello@chirp.camp" style="color: var(--campfire-orange); text-decoration: underline;">hello@chirp.camp</a></p>
+        <p style="margin-top: 24px; color: var(--text-muted); font-size: 0.95rem;">We sent a welcome email with these details. Questions? Reach us at <a href="mailto:hello@chirp.camp" style="color: var(--campfire-orange); text-decoration: underline;">hello@chirp.camp</a></p>
       </div>
 
     </div>
@@ -472,69 +395,72 @@
 
 
   <script>
+    // --- Config ---
+    var API_BASE = 'https://chirp-07tu.onrender.com';
+
     // --- Navbar scroll + parallax ---
-    const navbar = document.getElementById('navbar');
+    var navbar = document.getElementById('navbar');
     function onScroll() {
       navbar.classList.toggle('scrolled', window.scrollY > 50);
-      const maxScroll = document.body.scrollHeight - window.innerHeight;
-      const panDistance = (window.innerHeight * 3.5) - window.innerHeight;
-      const speed = maxScroll > 0 ? panDistance / maxScroll : 0;
+      var maxScroll = document.body.scrollHeight - window.innerHeight;
+      var panDistance = (window.innerHeight * 3.5) - window.innerHeight;
+      var speed = maxScroll > 0 ? panDistance / maxScroll : 0;
       document.body.style.setProperty('--parallax-y', (-window.scrollY * speed) + 'px');
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
 
     // --- Hamburger ---
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
+    var hamburgerBtn = document.getElementById('hamburger');
+    var mobileMenu = document.getElementById('mobileMenu');
+    hamburgerBtn.addEventListener('click', function() {
+      hamburgerBtn.classList.toggle('open');
       mobileMenu.classList.toggle('open');
     });
 
     // --- Scroll-reveal ---
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('in-view'); });
     }, { threshold: 0.1 });
-    document.querySelectorAll('section:not(.hero) > .container').forEach(el => observer.observe(el));
+    document.querySelectorAll('section:not(.hero) > .container').forEach(function(el) { observer.observe(el); });
 
     // --- Multi-step form ---
-    let currentStep = 1;
-    const totalSteps = 5;
+    var currentStep = 1;
+    var totalSteps = 4;
 
     function goStep(step) {
       // Validate current step before advancing
       if (step > currentStep && !validateStep(currentStep)) return;
 
       // Hide all panels
-      for (let i = 1; i <= totalSteps; i++) {
+      for (var i = 1; i <= totalSteps; i++) {
         document.getElementById('step' + i).style.display = 'none';
       }
       // Show target
       document.getElementById('step' + step).style.display = 'block';
 
       // Update stepper
-      document.querySelectorAll('.reg-step').forEach(s => {
-        const sNum = parseInt(s.dataset.step);
+      document.querySelectorAll('.reg-step').forEach(function(s) {
+        var sNum = parseInt(s.dataset.step);
         s.classList.toggle('active', sNum === step);
         s.classList.toggle('done', sNum < step);
       });
 
       currentStep = step;
 
-      // Populate review on step 5
-      if (step === 5) populateReview();
+      // Populate review on step 4
+      if (step === 4) populateReview();
 
       // Scroll to top of form
       document.querySelector('.reg-stepper').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     function validateStep(step) {
-      const panel = document.getElementById('step' + step);
-      const required = panel.querySelectorAll('[required]');
-      let valid = true;
+      var panel = document.getElementById('step' + step);
+      var required = panel.querySelectorAll('[required]');
+      var valid = true;
 
-      required.forEach(field => {
+      required.forEach(function(field) {
         if (!field.value || (field.type === 'checkbox' && !field.checked)) {
           field.classList.add('reg-invalid');
           valid = false;
@@ -544,153 +470,163 @@
       });
 
       // For radio buttons, check if any in the group is selected
-      const radios = panel.querySelectorAll('input[type="radio"][required]');
+      var radios = panel.querySelectorAll('input[type="radio"][required]');
       if (radios.length > 0) {
-        const name = radios[0].name;
-        const anyChecked = panel.querySelector(`input[name="${name}"]:checked`);
+        var name = radios[0].name;
+        var anyChecked = panel.querySelector('input[name="' + name + '"]:checked');
         if (!anyChecked) valid = false;
       }
 
+      // Step 3: password match validation
+      if (step === 3) {
+        var pw = document.getElementById('adminPassword').value;
+        var pwConfirm = document.getElementById('adminPasswordConfirm').value;
+
+        if (pw && pwConfirm && pw !== pwConfirm) {
+          document.getElementById('adminPasswordConfirm').classList.add('reg-invalid');
+          valid = false;
+          showFieldError(document.getElementById('adminPasswordConfirm'), 'Passwords do not match');
+        }
+
+        // Password strength check
+        if (pw) {
+          var hasUpper = /[A-Z]/.test(pw);
+          var hasLower = /[a-z]/.test(pw);
+          var hasNumber = /[0-9]/.test(pw);
+          if (pw.length < 8 || !hasUpper || !hasLower || !hasNumber) {
+            document.getElementById('adminPassword').classList.add('reg-invalid');
+            valid = false;
+            showFieldError(document.getElementById('adminPassword'), 'Must be 8+ chars with uppercase, lowercase, and a number');
+          }
+        }
+      }
+
       if (!valid) {
-        const first = panel.querySelector('.reg-invalid');
+        var first = panel.querySelector('.reg-invalid');
         if (first) first.focus();
       }
 
       return valid;
     }
 
+    function showFieldError(field, msg) {
+      // Remove existing error if any
+      var existing = field.parentNode.querySelector('.reg-field-error');
+      if (existing) existing.remove();
+      var el = document.createElement('span');
+      el.className = 'reg-field-error';
+      el.style.cssText = 'color: #dc2626; font-size: 0.82rem; margin-top: 4px; display: block;';
+      el.textContent = msg;
+      field.parentNode.appendChild(el);
+    }
+
     // Remove invalid class on input
-    document.addEventListener('input', (e) => {
-      if (e.target.classList.contains('reg-invalid')) {
+    document.addEventListener('input', function(e) {
+      if (e.target.classList && e.target.classList.contains('reg-invalid')) {
         e.target.classList.remove('reg-invalid');
+        var err = e.target.parentNode.querySelector('.reg-field-error');
+        if (err) err.remove();
       }
     });
 
     // --- Season type toggle ---
-    document.getElementById('radioSeasonal').addEventListener('change', () => {
+    document.getElementById('radioSeasonal').addEventListener('change', function() {
       document.getElementById('seasonMonthsGroup').style.display = '';
       updatePricing();
     });
-    document.getElementById('radioYearRound').addEventListener('change', () => {
+    document.getElementById('radioYearRound').addEventListener('change', function() {
       document.getElementById('seasonMonthsGroup').style.display = 'none';
       updatePricing();
     });
 
     // --- Live pricing ---
-    const regCapacity = document.getElementById('regCapacity');
+    var regCapacity = document.getElementById('regCapacity');
     regCapacity.addEventListener('input', updatePricing);
 
     function updatePricing() {
-      const cap = parseInt(regCapacity.value) || 0;
+      var cap = parseInt(regCapacity.value) || 0;
       if (cap < 1) {
-        document.getElementById('regActivePrice').textContent = '—';
-        document.getElementById('regSleepPrice').textContent = '—';
-        document.getElementById('regAnnualPrice').textContent = '—';
+        document.getElementById('regActivePrice').textContent = '\u2014';
+        document.getElementById('regSleepPrice').textContent = '\u2014';
+        document.getElementById('regAnnualPrice').textContent = '\u2014';
         document.getElementById('regPerCamper').textContent = '';
         return;
       }
 
-      const active = Math.max(100, cap);
-      const isYearRound = document.getElementById('radioYearRound').checked;
+      var active = Math.max(100, cap);
+      var isYearRound = document.getElementById('radioYearRound').checked;
 
       if (isYearRound) {
         document.getElementById('regActivePrice').textContent = '$' + active.toLocaleString();
         document.getElementById('regSleepPrice').textContent = 'N/A';
-        const annual = active * 12;
+        var annual = active * 12;
         document.getElementById('regAnnualPrice').textContent = '$' + annual.toLocaleString();
         document.getElementById('regPerCamper').textContent = '$' + (annual / cap).toFixed(2) + '/camper/yr';
       } else {
-        const sleep = Math.max(50, Math.round(cap / 3));
+        var sleep = Math.max(50, Math.round(cap / 3));
         document.getElementById('regActivePrice').textContent = '$' + active.toLocaleString();
         document.getElementById('regSleepPrice').textContent = '$' + sleep.toLocaleString();
-        const annual = (active * 4) + (sleep * 8);
+        var annual = (active * 4) + (sleep * 8);
         document.getElementById('regAnnualPrice').textContent = '$' + annual.toLocaleString();
         document.getElementById('regPerCamper').textContent = '$' + (annual / cap).toFixed(2) + '/camper/yr';
       }
     }
 
-    // --- Billing same-as toggle ---
-    const billingSame = document.getElementById('billingSame');
-    const billingFields = document.getElementById('billingFields');
-    billingFields.style.display = 'none';
-
-    billingSame.addEventListener('change', () => {
-      billingFields.style.display = billingSame.checked ? 'none' : '';
-      // Toggle required
-      document.getElementById('billingName').required = !billingSame.checked;
-      document.getElementById('billingEmail').required = !billingSame.checked;
-    });
-
     // --- Populate review ---
     function populateReview() {
-      const v = (id) => document.getElementById(id)?.value || '';
-      const sel = (id) => {
-        const el = document.getElementById(id);
-        return el?.options?.[el.selectedIndex]?.text || el?.value || '';
+      var v = function(id) { return (document.getElementById(id) || {}).value || ''; };
+      var sel = function(id) {
+        var el = document.getElementById(id);
+        return (el && el.options && el.options[el.selectedIndex]) ? el.options[el.selectedIndex].text : (el ? el.value : '');
       };
 
       document.getElementById('reviewCamp').innerHTML =
-        `<div class="reg-review-row"><span>Camp Name</span><span>${esc(v('campName'))}</span></div>` +
-        `<div class="reg-review-row"><span>Type</span><span>${esc(sel('campType'))}</span></div>` +
-        `<div class="reg-review-row"><span>Address</span><span>${esc(v('campAddress'))}, ${esc(v('campCity'))}, ${esc(sel('campState'))} ${esc(v('campZip'))}</span></div>` +
-        (v('campWebsite') ? `<div class="reg-review-row"><span>Website</span><span>${esc(v('campWebsite'))}</span></div>` : '');
+        '<div class="reg-review-row"><span>Camp Name</span><span>' + esc(v('campName')) + '</span></div>' +
+        '<div class="reg-review-row"><span>Type</span><span>' + esc(sel('campType')) + '</span></div>' +
+        '<div class="reg-review-row"><span>Address</span><span>' + esc(v('campAddress')) + ', ' + esc(v('campCity')) + ', ' + esc(sel('campState')) + ' ' + esc(v('campZip')) + '</span></div>' +
+        (v('campWebsite') ? '<div class="reg-review-row"><span>Website</span><span>' + esc(v('campWebsite')) + '</span></div>' : '');
 
-      const isSeasonal = document.getElementById('radioSeasonal').checked;
+      var isSeasonal = document.getElementById('radioSeasonal').checked;
       document.getElementById('reviewCapacity').innerHTML =
-        `<div class="reg-review-row"><span>Expected Max Campers</span><span>${esc(v('regCapacity'))} campers</span></div>` +
-        `<div class="reg-review-row"><span>Staff</span><span>~${esc(v('regStaff'))}</span></div>` +
-        `<div class="reg-review-row"><span>Season</span><span>${isSeasonal ? 'Seasonal (' + esc(sel('seasonStart')) + ' – ' + esc(sel('seasonEnd')) + ')' : 'Year-Round'}</span></div>`;
+        '<div class="reg-review-row"><span>Expected Max Campers</span><span>' + esc(v('regCapacity')) + ' campers</span></div>' +
+        '<div class="reg-review-row"><span>Staff</span><span>~' + esc(v('regStaff')) + '</span></div>' +
+        '<div class="reg-review-row"><span>Season</span><span>' + (isSeasonal ? 'Seasonal (' + esc(sel('seasonStart')) + ' \u2013 ' + esc(sel('seasonEnd')) + ')' : 'Year-Round') + '</span></div>';
 
       document.getElementById('reviewAdmin').innerHTML =
-        `<div class="reg-review-row"><span>Name</span><span>${esc(v('adminName'))}</span></div>` +
-        `<div class="reg-review-row"><span>Title</span><span>${esc(v('adminTitle'))}</span></div>` +
-        `<div class="reg-review-row"><span>Email</span><span>${esc(v('adminEmail'))}</span></div>` +
-        `<div class="reg-review-row"><span>Phone</span><span>${esc(v('adminPhone'))}</span></div>`;
-
-      const useSame = billingSame.checked;
-      const bName = useSame ? v('adminName') : v('billingName');
-      const bEmail = useSame ? v('adminEmail') : v('billingEmail');
-      document.getElementById('reviewBilling').innerHTML =
-        `<div class="reg-review-row"><span>Contact</span><span>${esc(bName)}</span></div>` +
-        `<div class="reg-review-row"><span>Email</span><span>${esc(bEmail)}</span></div>` +
-        `<div class="reg-review-row"><span>Address</span><span>${esc(v('billingAddress'))}, ${esc(v('billingCity'))}, ${esc(sel('billingState'))} ${esc(v('billingZip'))}</span></div>`;
-
-      // Fill hidden billing fields if same-as
-      if (useSame) {
-        document.getElementById('billingName').value = v('adminName');
-        document.getElementById('billingEmail').value = v('adminEmail');
-      }
+        '<div class="reg-review-row"><span>Name</span><span>' + esc(v('adminName')) + '</span></div>' +
+        '<div class="reg-review-row"><span>Email</span><span>' + esc(v('adminEmail')) + '</span></div>' +
+        '<div class="reg-review-row"><span>Phone</span><span>' + esc(v('adminPhone')) + '</span></div>';
 
       // Pricing review
-      const cap = parseInt(v('regCapacity')) || 0;
-      const activeP = Math.max(100, cap);
-      const isYR = document.getElementById('radioYearRound').checked;
-      let pricingHTML;
+      var cap = parseInt(v('regCapacity')) || 0;
+      var activeP = Math.max(100, cap);
+      var isYR = document.getElementById('radioYearRound').checked;
+      var pricingHTML;
 
       if (isYR) {
-        const annual = activeP * 12;
+        var annualP = activeP * 12;
         pricingHTML =
-          `<div class="reg-review-row"><span>Monthly</span><span>$${activeP.toLocaleString()}/mo</span></div>` +
-          `<div class="reg-review-row reg-review-total"><span>Estimated Annual</span><span>$${annual.toLocaleString()}/yr</span></div>`;
+          '<div class="reg-review-row"><span>Monthly</span><span>$' + activeP.toLocaleString() + '/mo</span></div>' +
+          '<div class="reg-review-row reg-review-total"><span>Estimated Annual</span><span>$' + annualP.toLocaleString() + '/yr</span></div>';
       } else {
-        const sleepP = Math.max(50, Math.round(cap / 3));
-        const annual = (activeP * 4) + (sleepP * 8);
+        var sleepP = Math.max(50, Math.round(cap / 3));
+        var annualP = (activeP * 4) + (sleepP * 8);
         pricingHTML =
-          `<div class="reg-review-row"><span>Active Season</span><span>$${activeP.toLocaleString()}/mo</span></div>` +
-          `<div class="reg-review-row"><span>Sleep Mode</span><span>$${sleepP.toLocaleString()}/mo</span></div>` +
-          `<div class="reg-review-row reg-review-total"><span>Est. Annual (4 active + 8 sleep)</span><span>$${annual.toLocaleString()}/yr</span></div>`;
+          '<div class="reg-review-row"><span>Active Season</span><span>$' + activeP.toLocaleString() + '/mo</span></div>' +
+          '<div class="reg-review-row"><span>Sleep Mode</span><span>$' + sleepP.toLocaleString() + '/mo</span></div>' +
+          '<div class="reg-review-row reg-review-total"><span>Est. Annual (4 active + 8 sleep)</span><span>$' + annualP.toLocaleString() + '/yr</span></div>';
       }
       document.getElementById('reviewPricing').innerHTML = pricingHTML;
     }
 
     function esc(s) {
-      const d = document.createElement('div');
+      var d = document.createElement('div');
       d.textContent = s;
       return d.innerHTML;
     }
 
     // --- Form submit ---
-    document.getElementById('regForm').addEventListener('submit', (e) => {
+    document.getElementById('regForm').addEventListener('submit', function(e) {
       e.preventDefault();
 
       if (!document.getElementById('agreeTerms').checked) {
@@ -698,27 +634,92 @@
         return;
       }
 
-      const form = document.getElementById('regForm');
-      const btn = document.getElementById('submitBtn');
-      btn.disabled = true;
-      btn.textContent = 'Submitting...';
+      var errorEl = document.getElementById('signupError');
+      errorEl.style.display = 'none';
 
-      fetch(form.action, {
+      var btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = 'Setting up your camp...';
+
+      var payload = {
+        camp_name: document.getElementById('campName').value.trim(),
+        street_address: document.getElementById('campAddress').value.trim(),
+        city: document.getElementById('campCity').value.trim(),
+        state: document.getElementById('campState').value,
+        zip_code: document.getElementById('campZip').value.trim(),
+        admin_name: document.getElementById('adminName').value.trim(),
+        admin_email: document.getElementById('adminEmail').value.trim().toLowerCase(),
+        admin_phone: document.getElementById('adminPhone').value.trim(),
+        admin_password: document.getElementById('adminPassword').value,
+        camper_capacity: parseInt(document.getElementById('regCapacity').value) || 100,
+        season_type: document.getElementById('radioYearRound').checked ? 'year_round' : 'seasonal',
+      };
+
+      fetch(API_BASE + '/auth/signup', {
         method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      }).then(() => {
-        form.style.display = 'none';
-        document.querySelector('.reg-stepper').style.display = 'none';
-        document.getElementById('regSuccess').style.display = 'block';
-        document.querySelector('.reg-stepper').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }).catch(() => {
-        // Still show success — formsubmit sometimes returns CORS errors but still delivers
-        form.style.display = 'none';
-        document.querySelector('.reg-stepper').style.display = 'none';
-        document.getElementById('regSuccess').style.display = 'block';
-      });
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+        .then(function(resp) {
+          if (!resp.ok) {
+            return resp.json().then(function(data) {
+              throw new Error(data.detail || 'Something went wrong. Please try again.');
+            });
+          }
+          return resp.json();
+        })
+        .then(function(data) {
+          // Success! Show the success screen
+          document.getElementById('regForm').style.display = 'none';
+          document.querySelector('.reg-stepper').style.display = 'none';
+          document.getElementById('regSuccess').style.display = 'block';
+          document.getElementById('successCampName').textContent = payload.camp_name;
+          document.getElementById('successEmail').textContent = payload.admin_email;
+          document.querySelector('.reg-stepper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+          // Also send the supplementary info (capacity, billing, etc.) to the team via email
+          sendTeamNotification(payload, data);
+        })
+        .catch(function(err) {
+          errorEl.textContent = err.message;
+          errorEl.style.display = 'block';
+          btn.disabled = false;
+          btn.textContent = 'Create My Camp';
+        });
     });
+
+    // Send supplementary signup details to the Chirp team (best-effort, non-blocking)
+    function sendTeamNotification(payload, apiResponse) {
+      var v = function(id) { return (document.getElementById(id) || {}).value || ''; };
+      var sel = function(id) {
+        var el = document.getElementById(id);
+        return (el && el.options && el.options[el.selectedIndex]) ? el.options[el.selectedIndex].text : '';
+      };
+
+      var formData = new FormData();
+      formData.append('_subject', 'New Camp Signup: ' + payload.camp_name);
+      formData.append('_captcha', 'false');
+      formData.append('_template', 'table');
+      formData.append('Camp Name', payload.camp_name);
+      formData.append('Camp Type', sel('campType'));
+      formData.append('Address', payload.street_address + ', ' + payload.city + ', ' + payload.state + ' ' + payload.zip_code);
+      formData.append('Website', v('campWebsite'));
+      formData.append('Expected Campers', v('regCapacity'));
+      formData.append('Estimated Staff', v('regStaff'));
+      formData.append('Season Type', document.getElementById('radioYearRound').checked ? 'Year-Round' : 'Seasonal');
+      formData.append('Admin Name', payload.admin_name);
+      formData.append('Admin Email', payload.admin_email);
+      formData.append('Admin Phone', payload.admin_phone);
+      formData.append('Admin Title', v('adminTitle'));
+      formData.append('How They Heard', sel('hearAbout'));
+      formData.append('Status', 'AUTO-PROVISIONED');
+
+      fetch('https://formsubmit.co/chirpcamping@gmail.com', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' },
+      }).catch(function() { /* best-effort */ });
+    }
   </script>
 
 </body>

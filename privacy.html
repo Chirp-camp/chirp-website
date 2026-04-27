@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Chirp</title>
+  <meta name="description" content="Chirp's privacy policy. Learn how we collect, use, and protect your data.">
+  <link rel="icon" type="image/png" href="DigitalAssets/ChirpAppCon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="ChirpTitle.png" alt="Chirp">
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/contact">Contact</a>
+        <a href="/get-started" class="nav-cta">Get Started</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/">Home</a>
+      <a href="/about">About Us</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/contact">Contact</a>
+      <a href="/get-started" class="nav-cta">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero hero-short">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>Privacy Policy</h1>
+    </div>
+  </section>
+
+  <!-- Privacy Content -->
+  <section class="mission-section section-padding">
+    <div class="container" style="max-width: 800px;">
+
+      <p style="color: var(--text-muted); margin-bottom: 32px;"><strong>Last updated:</strong> April 26, 2026</p>
+
+      <p>Chirp ("we", "us", "our") operates the Chirp mobile application and chirp.camp website (collectively, the "Service"). This Privacy Policy explains how we collect, use, disclose, and protect your information when you use our Service.</p>
+
+      <h2>1. Information We Collect</h2>
+
+      <h3>Account Information</h3>
+      <p>When you create an account, we collect your name, email address, phone number, and a password you create. Camp administrators also provide their camp's name and address during registration.</p>
+
+      <h3>Profile Information</h3>
+      <p>Users may optionally add a profile photo, title/role, and emergency contact information. Camp administrators may create camper profiles containing names, dates of birth, medical information, allergies, and emergency contact details.</p>
+
+      <h3>Location Data</h3>
+      <p>With your permission, Chirp collects your device's location to display your position on the camp map and enable safety features such as geofence monitoring and location-based emergency alerts. Location data is only collected while you are actively using the app or when background location is enabled by your camp administrator for safety purposes. You can disable location sharing at any time in the app's settings.</p>
+
+      <h3>Messages and Communications</h3>
+      <p>We store messages, announcements, and notifications sent through the Service to deliver them to recipients and maintain conversation history for your camp.</p>
+
+      <h3>Device Information</h3>
+      <p>We collect device identifiers (Expo push tokens) to deliver push notifications. We do not collect device advertising identifiers.</p>
+
+      <h3>Usage Data</h3>
+      <p>We collect anonymous error reports and performance data through Sentry to identify and fix issues. This data does not include personally identifiable information.</p>
+
+      <h2>2. How We Use Your Information</h2>
+      <ul style="margin-bottom: 24px;">
+        <li>To provide and maintain the Service, including messaging, weather alerts, and safety protocols</li>
+        <li>To send push notifications for weather alerts, emergency communications, and messages</li>
+        <li>To display staff locations on the camp map for safety coordination</li>
+        <li>To send transactional emails (invitations, password resets, subscription reminders)</li>
+        <li>To process payments through Stripe</li>
+        <li>To monitor and improve the reliability of the Service</li>
+      </ul>
+
+      <h2>3. How We Share Your Information</h2>
+      <p>We do not sell, rent, or trade your personal information. We share data only with the following categories of service providers, solely to operate the Service:</p>
+      <ul style="margin-bottom: 24px;">
+        <li><strong>Stripe</strong> — Payment processing for camp subscriptions</li>
+        <li><strong>Twilio</strong> — SMS delivery for emergency parent notifications</li>
+        <li><strong>Resend</strong> — Transactional email delivery (invitations, password resets)</li>
+        <li><strong>Expo (React Native)</strong> — Push notification delivery</li>
+        <li><strong>Sentry</strong> — Error monitoring and crash reporting</li>
+        <li><strong>National Weather Service (NWS)</strong> — Weather alert data for your camp's location</li>
+        <li><strong>Render</strong> — Cloud hosting infrastructure</li>
+        <li><strong>Cloudflare</strong> — File storage (uploaded photos and documents)</li>
+      </ul>
+      <p>Each provider processes data in accordance with their own privacy policy and only receives the minimum data necessary to provide their service.</p>
+
+      <h2>4. Data Storage and Security</h2>
+      <p>Your data is stored on servers hosted by Render (United States). All data is encrypted in transit using TLS. Passwords are hashed using bcrypt and are never stored in plaintext. Authentication tokens are stored in encrypted on-device storage (iOS Keychain / Android Keystore).</p>
+      <p>File uploads (photos, medical records, documents) are stored in Cloudflare R2 with access controlled through signed URLs that expire after 15 minutes.</p>
+
+      <h2>5. Data Retention</h2>
+      <p>We retain your account data for as long as your camp's account is active. Messages are retained per your camp administrator's configured retention policy. Audit logs are retained for compliance purposes.</p>
+      <p>If you request account deletion, we will delete your personal data within 30 days. Camp administrators can delete individual user accounts and camper profiles from within the app.</p>
+
+      <h2>6. Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul style="margin-bottom: 24px;">
+        <li>Access the personal data we hold about you</li>
+        <li>Request correction of inaccurate data</li>
+        <li>Request deletion of your account and associated data</li>
+        <li>Disable location sharing at any time</li>
+        <li>Opt out of non-essential push notifications</li>
+      </ul>
+      <p>To exercise these rights, contact us at <a href="mailto:hello@chirp.camp" style="color: var(--campfire-orange);">hello@chirp.camp</a> or contact your camp administrator.</p>
+
+      <h2>7. Children's Privacy</h2>
+      <p>Chirp is designed for use by camp staff and administrators (adults). The app does not provide accounts or login access to children. Camper profiles (which may include minors' information) are created and managed exclusively by authorized camp administrators. We do not knowingly collect personal information directly from children under 13. If a parent or guardian believes their child's information has been collected improperly, please contact us at <a href="mailto:hello@chirp.camp" style="color: var(--campfire-orange);">hello@chirp.camp</a> and we will promptly remove it.</p>
+
+      <h2>8. Third-Party Links</h2>
+      <p>The Service may contain links to third-party websites or services. We are not responsible for the privacy practices of those third parties. We encourage you to review their privacy policies.</p>
+
+      <h2>9. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by posting a notice in the app or sending an email. The "Last updated" date at the top of this page indicates when this policy was last revised.</p>
+
+      <h2>10. Contact Us</h2>
+      <p>If you have questions about this Privacy Policy or our data practices, contact us at:</p>
+      <p>
+        <strong>Chirp</strong><br>
+        Email: <a href="mailto:hello@chirp.camp" style="color: var(--campfire-orange);">hello@chirp.camp</a><br>
+        Website: <a href="https://chirp.camp" style="color: var(--campfire-orange);">chirp.camp</a>
+      </p>
+
+    </div>
+  </section>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    function onScroll() {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const panDistance = (window.innerHeight * 3.5) - window.innerHeight;
+      const speed = maxScroll > 0 ? panDistance / maxScroll : 0;
+      document.body.style.setProperty('--parallax-y', (-window.scrollY * speed) + 'px');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section:not(.hero) > .container').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
