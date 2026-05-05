@@ -184,7 +184,7 @@
       <p><strong>Messages and Voice.</strong> Direct messages, group chat, announcements, and walkie-talkie voice messages are stored on Chirp's servers in encrypted form at rest and transmitted over TLS. <strong>Messages are not end-to-end encrypted.</strong> Authorized Chirp engineering personnel can, in narrow circumstances (e.g., debugging a delivery failure or responding to legal process), access message content. Camps and users should not use Chirp to share information they would not be willing to share with the Camp's administration.</p>
       <p><strong>Walkie-Talkie / Audio Recording.</strong> Where enabled, the Services record short voice messages from staff devices and transmit them to other staff. By using this feature, you consent to being recorded for the purpose of communicating with your Camp team. Audio messages are retained for the period configured by the Camp (default 48 hours) and then deleted.</p>
       <p><strong>Push Notifications.</strong> Chirp sends push notifications via the Expo Push service, which routes to Apple Push Notification service (APNs) and Firebase Cloud Messaging (FCM). Notifications may include event titles and brief contextual content. You can disable notifications in device settings, though doing so may disable safety alerts.</p>
-      <p><strong>SMS to Parents/Emergency Contacts.</strong> Chirp uses Twilio to deliver emergency SMS to phone numbers a Camp has stored on a camper profile. By providing a phone number to a Camp for emergency-contact purposes, the Parent agrees to receive transactional SMS from the Camp via Chirp. Standard message and data rates may apply. To stop receiving messages, reply STOP.</p>
+      <p><strong>SMS to Parents/Emergency Contacts.</strong> Chirp uses Twilio to deliver emergency SMS to phone numbers a Camp has stored on a camper profile. Before any phone number is used for SMS, the Camp's authorized administrator must affirmatively attest in the Chirp app that the phone owner has consented to receive emergency SMS at that number, and Chirp blocks SMS to any contact lacking that attestation. By providing a phone number to a Camp for emergency-contact purposes, the Parent agrees to receive transactional SMS from the Camp via Chirp. Message frequency varies based on emergencies and may be infrequent. Standard message and data rates may apply. Reply STOP to opt out at any time. Reply HELP for help, or contact <a href="mailto:hello@chirp.camp" style="color: var(--campfire-orange);">hello@chirp.camp</a>. <strong>Phone numbers are not shared with any third party for marketing purposes; we share them only with the Twilio SMS-delivery sub-processor strictly to deliver the Camp's emergency messages.</strong> See our full SMS disclosure at <a href="/sms-consent" style="color: var(--campfire-orange);">chirp.camp/sms-consent</a>.</p>
 
       <h2>8. How We Share Information</h2>
 
@@ -319,6 +319,7 @@
         <h4>Legal &amp; Contact</h4>
         <a href="/privacy-policy">Privacy Policy</a>
         <a href="/terms">Terms &amp; Conditions</a>
+        <a href="/sms-consent">SMS Consent</a>
         <a href="mailto:hello@chirp.camp">hello@chirp.camp</a>
       </div>
     </div>
