@@ -670,6 +670,17 @@
       btn.disabled = true;
       btn.textContent = 'Setting up your camp...';
 
+      var v = function(id) { return (document.getElementById(id) || {}).value || ''; };
+      var sel = function(id) {
+        var el = document.getElementById(id);
+        return (el && el.options && el.options[el.selectedIndex]) ? el.options[el.selectedIndex].text : '';
+      };
+      var orNull = function(s) {
+        var t = (s || '').trim();
+        return t.length ? t : null;
+      };
+      var staff = parseInt(v('regStaff'), 10);
+
       var payload = {
         camp_name: document.getElementById('campName').value.trim(),
         street_address: document.getElementById('campAddress').value.trim(),
@@ -682,6 +693,11 @@
         admin_password: document.getElementById('adminPassword').value,
         camper_capacity: parseInt(document.getElementById('regCapacity').value) || 100,
         season_type: document.getElementById('radioYearRound').checked ? 'year_round' : 'seasonal',
+        camp_type: orNull(sel('campType')),
+        website: orNull(v('campWebsite')),
+        estimated_staff: isNaN(staff) ? null : staff,
+        admin_title: orNull(v('adminTitle')),
+        how_they_heard: orNull(sel('hearAbout')),
       };
 
       fetch(API_BASE + '/auth/signup', {
@@ -705,9 +721,6 @@
           document.getElementById('successCampName').textContent = payload.camp_name;
           document.getElementById('successEmail').textContent = payload.admin_email;
           document.querySelector('.reg-stepper').scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-          // Also send the supplementary info (capacity, billing, etc.) to the team via email
-          sendTeamNotification(payload, data);
         })
         .catch(function(err) {
           errorEl.textContent = err.message;
@@ -716,39 +729,6 @@
           btn.textContent = 'Create My Camp';
         });
     });
-
-    // Send supplementary signup details to the Chirp team (best-effort, non-blocking)
-    function sendTeamNotification(payload, apiResponse) {
-      var v = function(id) { return (document.getElementById(id) || {}).value || ''; };
-      var sel = function(id) {
-        var el = document.getElementById(id);
-        return (el && el.options && el.options[el.selectedIndex]) ? el.options[el.selectedIndex].text : '';
-      };
-
-      var formData = new FormData();
-      formData.append('_subject', 'New Camp Signup: ' + payload.camp_name);
-      formData.append('_captcha', 'false');
-      formData.append('_template', 'table');
-      formData.append('Camp Name', payload.camp_name);
-      formData.append('Camp Type', sel('campType'));
-      formData.append('Address', payload.street_address + ', ' + payload.city + ', ' + payload.state + ' ' + payload.zip_code);
-      formData.append('Website', v('campWebsite'));
-      formData.append('Expected Campers', v('regCapacity'));
-      formData.append('Estimated Staff', v('regStaff'));
-      formData.append('Season Type', document.getElementById('radioYearRound').checked ? 'Year-Round' : 'Seasonal');
-      formData.append('Admin Name', payload.admin_name);
-      formData.append('Admin Email', payload.admin_email);
-      formData.append('Admin Phone', payload.admin_phone);
-      formData.append('Admin Title', v('adminTitle'));
-      formData.append('How They Heard', sel('hearAbout'));
-      formData.append('Status', 'AUTO-PROVISIONED');
-
-      fetch('https://formsubmit.co/chirpcamping@gmail.com', {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' },
-      }).catch(function() { /* best-effort */ });
-    }
   </script>
 
 </body>
