@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Parental Consent Screen — Chirp</title>
+  <meta name="description" content="A view-only sample of the parental consent screen that parents complete via a unique emailed link from their child's camp.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="DigitalAssets/ChirpAppCon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .sample-page-wrap {
+      padding: 140px 20px 80px;
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sample-banner {
+      max-width: 720px;
+      width: 100%;
+      background: linear-gradient(135deg, rgba(255, 140, 66, 0.18), rgba(212, 165, 74, 0.18));
+      border: 2px solid var(--campfire-orange);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+      color: var(--text-primary);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .sample-banner strong {
+      color: var(--campfire-orange);
+      display: block;
+      font-family: 'Quicksand', 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .flow-callout {
+      max-width: 720px;
+      width: 100%;
+      background: rgba(28, 55, 33, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 22px 26px;
+      margin-bottom: 28px;
+      color: var(--text-primary);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      box-sizing: border-box;
+    }
+    .flow-callout h2 {
+      font-family: 'Quicksand', 'Nunito', sans-serif;
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 1.05rem;
+      margin: 0 0 12px;
+    }
+    .flow-callout ol {
+      list-style: decimal;
+      padding-left: 22px;
+      margin: 0;
+      color: var(--text-primary);
+    }
+    .flow-callout ol li {
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+    .flow-callout ol li:last-child {
+      margin-bottom: 0;
+    }
+    .flow-callout ol li strong {
+      color: var(--campfire-orange);
+      font-weight: 700;
+    }
+
+    .consent-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 640px;
+      width: 100%;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      color: #1f2937;
+      font-family: 'Nunito', sans-serif;
+      box-sizing: border-box;
+    }
+    .consent-card * {
+      font-family: inherit;
+    }
+    .consent-card .shield-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 14px;
+      color: var(--campfire-orange);
+    }
+    .consent-card h1 {
+      font-family: 'Quicksand', 'Nunito', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #111827;
+      text-align: center;
+      margin: 0 0 8px;
+      line-height: 1.25;
+    }
+    .consent-card .lead {
+      color: #4b5563;
+      text-align: center;
+      font-size: 0.875rem;
+      margin: 0 0 24px;
+      line-height: 1.5;
+    }
+    .consent-card .info-box {
+      background: #f3f4f6;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+      color: #374151;
+      line-height: 1.55;
+    }
+    .consent-card .info-box .info-block + .info-block {
+      margin-top: 16px;
+    }
+    .consent-card .info-box .info-label {
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+    .consent-card .info-box p {
+      color: #374151;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin: 0;
+    }
+    .consent-card .info-box .info-link {
+      display: inline-block;
+      margin-top: 16px;
+      color: var(--campfire-orange);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .consent-card .info-box .info-link:hover {
+      text-decoration: underline;
+    }
+
+    .consent-card .cc-field {
+      margin-bottom: 16px;
+    }
+    .consent-card .cc-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 6px;
+    }
+    .consent-card .cc-label .req {
+      color: #ef4444;
+      margin-left: 2px;
+    }
+    .consent-card .cc-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 1rem;
+      color: #111827;
+      background: #ffffff;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .consent-card .cc-input::placeholder {
+      color: #9ca3af;
+    }
+    .consent-card .cc-input:focus {
+      border-color: var(--campfire-orange);
+      box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.25);
+    }
+    .consent-card .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: #374151;
+      line-height: 1.5;
+      cursor: pointer;
+      margin-bottom: 24px;
+    }
+    .consent-card .checkbox-row input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--campfire-orange);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .consent-card .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--campfire-orange), #f59e0b);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.05s;
+      font-family: 'Quicksand', 'Nunito', sans-serif;
+    }
+    .consent-card .submit-btn:hover:not(:disabled) {
+      opacity: 0.92;
+    }
+    .consent-card .submit-btn:active:not(:disabled) {
+      transform: translateY(1px);
+    }
+    .consent-card .submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    .consent-card .footer-note {
+      font-size: 0.8rem;
+      color: #6b7280;
+      text-align: center;
+      margin: 12px 0 0;
+      line-height: 1.5;
+    }
+
+    .success-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 40px 32px;
+      max-width: 460px;
+      width: 100%;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      color: #1f2937;
+      text-align: center;
+      font-family: 'Nunito', sans-serif;
+      box-sizing: border-box;
+    }
+    .success-card .check-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+      color: #10b981;
+    }
+    .success-card h1 {
+      font-family: 'Quicksand', 'Nunito', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 12px;
+    }
+    .success-card p {
+      color: #4b5563 !important;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0 0 12px;
+    }
+    .success-card .back-link {
+      display: inline-block;
+      margin-top: 16px;
+      color: var(--campfire-orange);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .success-card .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="ChirpTitle.png" alt="Chirp">
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/contact">Contact</a>
+        <a href="/get-started" class="nav-cta">Get Started</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/">Home</a>
+      <a href="/about">About Us</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/contact">Contact</a>
+      <a href="/get-started" class="nav-cta">Get Started</a>
+    </div>
+  </nav>
+
+  <main class="sample-page-wrap">
+
+    <div class="sample-banner" role="note">
+      <strong>📋 Sample — not a real consent form</strong>
+      This is a sample of the consent screen real parents complete via a unique emailed link from their child's camp. This sample exists for review purposes — submitting it does not record real consent.
+    </div>
+
+    <aside class="flow-callout" aria-label="How parents reach this screen">
+      <h2>How parents reach this screen</h2>
+      <ol>
+        <li>Camp staff add the parent's email and phone to the camper profile in the Chirp app, <strong>checking a required attestation</strong> that the parent has consented to emergency SMS at that number.</li>
+        <li>Chirp emails the parent a <strong>unique tokenized link</strong> from the camp.</li>
+        <li>The parent clicks the link and lands on this screen, <strong>types the camper's first name</strong> and <strong>checks the guardian box</strong>, then taps Confirm consent.</li>
+        <li>Only after the parent confirms is SMS enabled for that contact. The parent can <strong>reply STOP</strong> to any message to revoke at any time.</li>
+      </ol>
+    </aside>
+
+    <!-- Consent card (mirrors registration-app App.tsx step='consent-confirm') -->
+    <section class="consent-card" id="consentCard" aria-labelledby="consentTitle">
+      <div class="shield-wrap" aria-hidden="true">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      <h1 id="consentTitle">Parental consent for Sam</h1>
+      <p class="lead">
+        <strong>Demo Camp</strong> has added a profile for Sam on Chirp and needs your consent before sending you emergency text messages or storing your child's photo and medical documents.
+      </p>
+
+      <div class="info-box">
+        <div class="info-block">
+          <div class="info-label">What is collected</div>
+          <p>Identity (name, date of birth), photo, allergies, medications, dietary restrictions, special needs, emergency notes, and your contact information.</p>
+        </div>
+        <div class="info-block">
+          <div class="info-label">How it is used</div>
+          <p>Camp safety operations, internal staff communication, and emergency contact. Data is shared with service providers (Twilio for SMS, Resend for email, Cloudflare for storage) only as needed to deliver the service. We do not sell your information or use it for advertising.</p>
+        </div>
+        <div class="info-block">
+          <div class="info-label">If you don't consent</div>
+          <p>Demo Camp can still keep Sam's basic profile, but emergency text messages, emergency emails, photo storage, and medical-document storage will be disabled until you confirm.</p>
+        </div>
+        <div class="info-block">
+          <a class="info-link" href="/privacy-policy" target="_blank" rel="noopener noreferrer">Read the full Privacy Policy →</a>
+        </div>
+      </div>
+
+      <form id="consentForm" novalidate>
+        <div class="cc-field">
+          <label class="cc-label" for="firstNameInput">
+            Type Sam's first name to confirm <span class="req">*</span>
+          </label>
+          <input
+            type="text"
+            id="firstNameInput"
+            class="cc-input"
+            placeholder="First name"
+            autocomplete="off"
+          />
+        </div>
+
+        <label class="checkbox-row" for="guardianCheck">
+          <input type="checkbox" id="guardianCheck" />
+          <span>I am the parent or legal guardian of Sam and I consent to the collection and use described above.</span>
+        </label>
+
+        <button type="submit" id="submitBtn" class="submit-btn" disabled>Confirm consent</button>
+        <p class="footer-note">If you didn't expect this email, contact Demo Camp directly. They have your information on file.</p>
+      </form>
+    </section>
+
+    <!-- Success state -->
+    <section class="success-card hidden" id="successCard" aria-live="polite">
+      <div class="check-wrap" aria-hidden="true">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+      </div>
+      <h1>Thank you — this was a sample</h1>
+      <p>No real consent was recorded. In production, this screen confirms a parent's consent and triggers a confirmation email with a link to withdraw at any time.</p>
+      <p>The real flow is reached only via a unique tokenized link emailed to the parent on file at the child's camp.</p>
+      <a class="back-link" href="/sms-consent">← Back to SMS Consent &amp; Disclosure</a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="ChirpTitle.png" alt="Chirp">
+        <p>Camp communication, weather safety, and emergency coordination — built for camp staff.</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Chirp</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/get-started">Get Started</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Legal &amp; Contact</h4>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms">Terms &amp; Conditions</a>
+        <a href="/sms-consent">SMS Consent</a>
+        <a href="mailto:hello@chirp.camp">hello@chirp.camp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Chirp. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    function onScroll() {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Sample consent form behavior — never calls any API.
+    const firstNameInput = document.getElementById('firstNameInput');
+    const guardianCheck = document.getElementById('guardianCheck');
+    const submitBtn = document.getElementById('submitBtn');
+    const consentForm = document.getElementById('consentForm');
+    const consentCard = document.getElementById('consentCard');
+    const successCard = document.getElementById('successCard');
+
+    function refreshSubmitState() {
+      submitBtn.disabled = !(guardianCheck.checked && firstNameInput.value.trim().length > 0);
+    }
+    firstNameInput.addEventListener('input', refreshSubmitState);
+    guardianCheck.addEventListener('change', refreshSubmitState);
+
+    consentForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      consentCard.classList.add('hidden');
+      successCard.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
