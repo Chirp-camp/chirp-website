@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Your Account &mdash; Chirp</title>
+  <meta name="description" content="How to request deletion of your Chirp account and associated data, what gets removed, what is retained for safety and legal compliance, and how to contact Chirp.">
+  <link rel="icon" type="image/png" href="DigitalAssets/ChirpAppCon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="ChirpTitle.png" alt="Chirp">
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/contact">Contact</a>
+        <a href="/get-started" class="nav-cta">Get Started</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/">Home</a>
+      <a href="/about">About Us</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/contact">Contact</a>
+      <a href="/get-started" class="nav-cta">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero hero-short">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>Delete Your Account</h1>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="mission-section section-padding">
+    <div class="container in-view" style="max-width: 820px;">
+
+      <p style="color: var(--text-muted); margin-bottom: 8px;"><strong>Effective Date:</strong> May 13, 2026</p>
+      <p style="color: var(--text-muted); margin-bottom: 32px;"><strong>Last Updated:</strong> May 13, 2026</p>
+
+      <p>This page explains how to request deletion of your Chirp account and the personal information associated with it, what data is removed, what is retained for legal and safety reasons, and how long the process takes. It supplements Section 11.2 (Account Deletion) of our <a href="/privacy-policy" style="color: var(--campfire-orange);">Privacy Policy</a>.</p>
+
+      <p>Chirp is a camp management platform operated by Chirp ("we", "us", "our"). User accounts in Chirp belong to Camp Administrators and Counselors ("Staff"). Campers do not have user accounts and do not log in &mdash; their information is stored as a profile record managed by the Camp.</p>
+
+      <h2>How to Request Account Deletion</h2>
+      <p>You may request deletion of your Staff account in any of the following ways:</p>
+
+      <h3>1. In-App Request (Recommended)</h3>
+      <p>Open the Chirp mobile app and tap <strong>Settings &rarr; Request Account Deletion</strong>. Chirp will open your device's email composer with a prefilled message addressed to <a href="mailto:hello@chirp.camp" style="color: var(--campfire-orange);">hello@chirp.camp</a> containing your account name and email. Review and send the message; we will process the request as described under <a href="#timeline" style="color: var(--campfire-orange);">Timeline</a> below.</p>
+
+      <h3>2. Email Chirp Directly</h3>
+      <p>If you cannot access the app, send an email to <a href="mailto:hello@chirp.camp?subject=Account%20Deletion%20Request" style="color: var(--campfire-orange);">hello@chirp.camp</a> from the email address registered on your Chirp account, with the subject <strong>"Account Deletion Request"</strong>. Include in the body:</p>
+      <ul style="margin-bottom: 24px;">
+        <li>Your full name as it appears in Chirp</li>
+        <li>The Camp you are (or were) associated with</li>
+        <li>Confirmation that you understand the deletion is permanent</li>
+      </ul>
+
+      <h3>3. Ask Your Camp Administrator</h3>
+      <p>Because Chirp accounts are provisioned by Camps, your Camp's Administrator can remove your Staff account directly from the Chirp admin console. This is typically the fastest method. Contact your Camp's main office or director and ask them to remove your account from <strong>User Management &rarr; Profiles</strong> in the Chirp app.</p>
+
+      <h2 id="timeline">Timeline</h2>
+      <ul style="margin-bottom: 24px;">
+        <li><strong>Acknowledgement:</strong> within 5 business days of receiving your request, we will acknowledge it and, if needed, ask for identity verification.</li>
+        <li><strong>Deletion:</strong> within <strong>30 days</strong> of verification, your account is soft-deleted, log-in access is revoked, and personal data is removed or anonymized as described below.</li>
+        <li><strong>Backups:</strong> data residing in encrypted database backups is rotated out within 30 days of soft-deletion, completing the erasure cycle within approximately 60 days of the original request.</li>
+      </ul>
+
+      <h2>What Is Deleted</h2>
+      <p>Upon a verified deletion request, the following data is deleted or anonymized:</p>
+      <ul style="margin-bottom: 24px;">
+        <li>Your name, email address, phone number, and profile photo</li>
+        <li>Your hashed password, refresh tokens, and biometric-unlock settings</li>
+        <li>Your role and permission assignments within your Camp</li>
+        <li>Your emergency contact information and any vehicle information you provided</li>
+        <li>Your real-time location, location history, and geofence events</li>
+        <li>Push notification tokens associated with your devices</li>
+        <li>Personal preferences and in-app settings tied to your account</li>
+        <li>Your authorship attribution on messages you sent (your name is replaced with "Deleted User"; message content is retained where the Camp's retention policy requires it for safety operations)</li>
+      </ul>
+
+      <h2>What Is Retained, and Why</h2>
+      <p>Some information may be retained after your account is deleted. Each retention reason is required either by law, by Camp safety operations, or by the contract Chirp has with the Camp Customer that provisioned your account.</p>
+      <ul style="margin-bottom: 24px;">
+        <li><strong>Camper safety records you authored</strong> &mdash; medical notes, incident reports, protocol-execution entries, attestations of parental consent, and similar records that are part of a Camp's safety record. <em>Retained per the Camp's record-retention policy, typically up to 7 years, to comply with state youth-protection and licensing requirements.</em></li>
+        <li><strong>Audit log entries</strong> describing security-relevant actions you took (logins, permission changes, protocol activations, role assignments). <em>Retained for 24 months</em> to support security investigations and compliance review.</li>
+        <li><strong>Message content</strong> in conversations and announcements. Your name is replaced with "Deleted User" on each message; the message body is retained per the Camp's configured message-retention setting (default: indefinite; Camps can configure shorter retention).</li>
+        <li><strong>Walkie-talkie / voice messages</strong> you sent. <em>Retained per the Camp's voice-retention setting (default: 48 hours)</em> and then deleted automatically.</li>
+        <li><strong>Files you uploaded to a camper profile</strong> (medical records, immunization documents, insurance documents). These belong to the camper's profile, not to your account. They remain with the camper profile and are managed by the Camp's Administrator.</li>
+        <li><strong>Financial records</strong>, if any (subscription receipts, refund records). <em>Retained for as long as required by U.S. federal and state tax law</em>, typically 7 years.</li>
+        <li><strong>Encrypted database backups</strong>. Backups containing your data are retained for up to 30 days after soft-deletion and then rotated out per our standard backup-retention schedule.</li>
+        <li><strong>Records required to resolve open disputes, security incidents, or legal obligations</strong>. Where applicable, we retain the minimum data necessary until the matter is resolved.</li>
+      </ul>
+
+      <h2>If You Are a Parent or Guardian</h2>
+      <p>Parents and guardians are <strong>not Chirp users</strong>. Phone numbers and email addresses listed on a camper profile for emergency-contact purposes are not Chirp accounts and cannot be deleted through this page.</p>
+      <p>To remove your contact information from a camper profile, contact the Camp directly and ask the Administrator to remove or update your contact record. To stop SMS messages immediately, reply <strong>STOP</strong> to any Chirp-delivered emergency SMS message (see our <a href="/sms-consent" style="color: var(--campfire-orange);">SMS Consent &amp; Disclosure</a> page).</p>
+      <p>To request deletion of information stored about your child, please contact your child's Camp directly. Chirp acts as a service provider to Camps and will assist in fulfilling parent deletion requests received through a Camp.</p>
+
+      <h2>If Your Camp Has Already Ended Its Subscription</h2>
+      <p>If your Camp Customer's subscription with Chirp has ended, your account may already be inaccessible. You may still email <a href="mailto:hello@chirp.camp?subject=Delete%20My%20Chirp%20Account" style="color: var(--campfire-orange);">hello@chirp.camp</a> to confirm the status of your data and request permanent erasure of any residual records.</p>
+
+      <h2>Cancellation vs. Deletion</h2>
+      <p>Deactivating a Camp's subscription is not the same as deleting individual accounts. If your goal is to stop being billed, please contact your Camp Administrator about subscription changes. If your goal is to remove your personal data, follow the instructions on this page.</p>
+
+      <h2>Your Privacy Rights</h2>
+      <p>Residents of California, the EU/UK/EEA, and several U.S. states have additional rights described in our <a href="/privacy-policy" style="color: var(--campfire-orange);">Privacy Policy</a>, including the right to access, correct, port, or restrict processing of your personal information. To exercise any of these rights, contact <a href="mailto:hello@chirp.camp" style="color: var(--campfire-orange);">hello@chirp.camp</a>. We may need to verify your identity before fulfilling a request.</p>
+
+      <h2>Contact</h2>
+      <p>
+        <strong>Chirp</strong><br>
+        Account deletion requests: <a href="mailto:hello@chirp.camp?subject=Delete%20My%20Chirp%20Account" style="color: var(--campfire-orange);">hello@chirp.camp</a><br>
+        General contact: <a href="mailto:hello@chirp.camp" style="color: var(--campfire-orange);">hello@chirp.camp</a><br>
+        Website: <a href="https://chirp.camp" style="color: var(--campfire-orange);">chirp.camp</a>
+      </p>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="ChirpTitle.png" alt="Chirp">
+        <p>Camp communication, weather safety, and emergency coordination &mdash; built for camp staff.</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Chirp</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/get-started">Get Started</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Legal &amp; Contact</h4>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms">Terms &amp; Conditions</a>
+        <a href="/sms-consent">SMS Consent</a>
+        <a href="/delete-account">Delete Account</a>
+        <a href="mailto:hello@chirp.camp">hello@chirp.camp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Chirp. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    function onScroll() {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const panDistance = (window.innerHeight * 3.5) - window.innerHeight;
+      const speed = maxScroll > 0 ? panDistance / maxScroll : 0;
+      document.body.style.setProperty('--parallax-y', (-window.scrollY * speed) + 'px');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section:not(.hero) > .container').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
